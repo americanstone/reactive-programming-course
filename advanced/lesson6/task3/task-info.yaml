@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 3
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 205
+    length: 75
+    placeholder_text: TODO
+- name: test/Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
