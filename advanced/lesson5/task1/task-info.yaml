@@ -4,9 +4,6 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 190
-    length: 20
-    placeholder_text: TODO
   - offset: 147
     length: 30
     placeholder_text: TODO

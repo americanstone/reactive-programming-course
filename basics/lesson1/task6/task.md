@@ -1,5 +1,5 @@
-Сгенерируйте `Flux` последовательности фибоначи глубиной в 20
+Сгенерируйте `Flux` с интервалом отправки элементов
    
 <div class="hint">
-  Используйте Flux.generate(stateSupplier, (state, sink) -> state) и .startWith для передачи [0, 1, 1] последовательности
+  Используйте <code>Flux.interval()</code>
 </div>
