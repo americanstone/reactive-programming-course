@@ -1,0 +1,9 @@
+type: edu
+custom_name: Task 2
+files:
+- name: src/Task.java
+  visible: true
+- name: build.gradle
+  visible: false
+- name: test/Tests.java
+  visible: false
