@@ -6,7 +6,7 @@ files:
   placeholders:
   - offset: 128
     length: 17
-    placeholder_text: TODO
+    placeholder_text: null;
 - name: test/Tests.java
   visible: false
 - name: build.gradle

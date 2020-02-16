@@ -2,6 +2,9 @@ title: Reactive Programming Course
 language: Russian
 summary: Reactive Programming With Spring And Project Reactor Course
 programming_language: Java
+programming_language_version: 8
+solutions_hidden: true
+type: edu
 content:
 - basics
 - advanced

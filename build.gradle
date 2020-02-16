@@ -25,10 +25,10 @@ subprojects {
     }
 
     dependencies {
-        compile platform('io.projectreactor:reactor-bom:Dysprosium-SR1')
+        compile platform('io.projectreactor:reactor-bom:Dysprosium-SR4')
 
         testCompile platform('org.junit:junit-bom:5.5.2')
-        testCompile platform('io.projectreactor:reactor-bom:Dysprosium-SR1')
+        testCompile platform('io.projectreactor:reactor-bom:Dysprosium-SR4')
         testCompile 'ch.qos.logback:logback-core:1.2.3'
         testCompile 'ch.qos.logback:logback-classic:1.2.3'
         testCompile 'org.assertj:assertj-core:3.14.0'

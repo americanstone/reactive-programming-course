@@ -6,10 +6,10 @@ files:
   placeholders:
   - offset: 229
     length: 55
-    placeholder_text: TODO
+    placeholder_text: Flux.error(new ToDoException());
   - offset: 374
     length: 52
-    placeholder_text: 'TODO: With Processor'
+    placeholder_text: 'Flux.error(new ToDoException()); // With Processor'
 - name: test/Tests.java
   visible: false
 - name: build.gradle

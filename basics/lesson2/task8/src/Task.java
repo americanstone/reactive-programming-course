@@ -5,7 +5,7 @@ import reactor.core.publisher.Mono;
 
 public class Task {
 
-	public static Mono<List<String>> createSequence(Flux<String> flux) {
+	public static Mono<List<String>> transformToList(Flux<String> flux) {
 		return flux.collectList();
 	}
 }

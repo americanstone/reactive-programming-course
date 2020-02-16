@@ -6,7 +6,7 @@ files:
   placeholders:
   - offset: 192
     length: 175
-    placeholder_text: '//TODO: use StepVerifier to perform testing'
+    placeholder_text: '//Flux.error(new ToDoException()); // use StepVerifier to perform testing'
 - name: test/Tests.java
   visible: false
 - name: build.gradle

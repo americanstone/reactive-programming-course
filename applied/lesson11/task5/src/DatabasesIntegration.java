@@ -1,3 +1,5 @@
+import java.time.Duration;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -65,14 +67,18 @@ public class DatabasesIntegration {
 	}
 
     static Mono<Result> dbWriteInTransaction(DatabaseApi db, Flux<Integer> dataSource) {
-        return Mono.usingWhen(db.<Integer>open().retry(10, t -> t instanceof IllegalAccessError),
-                objectConnection -> objectConnection.write(dataSource),
-                objectConnection -> objectConnection.close(),
-                (connection, t) -> connection.rollback()
-                                             .then(connection.close()),
-                (connection) -> connection.rollback()
-                                          .then(connection.close()))
-                   .map(id -> (Result) new SuccessResult(id))
-                   .onErrorResume(throwable -> Mono.<Result>just(new ErrorResult(throwable)));
+        return Mono
+		        .usingWhen(
+		                db.<Integer>open().retry(10, t -> t instanceof IllegalAccessError),
+		                objectConnection -> objectConnection.write(dataSource),
+		                objectConnection -> objectConnection.close(),
+		                (connection, t) -> connection.rollback()
+		                                             .then(connection.close()),
+		                (connection) -> connection.rollback()
+		                                          .then(connection.close())
+		        )
+                .map(id -> (Result) new SuccessResult(id))
+		        .timeout(Duration.ofMillis(1000))
+                .onErrorResume(throwable -> Mono.<Result>just(new ErrorResult(throwable)));
     }
 }

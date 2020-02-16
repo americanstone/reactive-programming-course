@@ -12,7 +12,7 @@ files:
   placeholders:
   - offset: 921
     length: 1203
-    placeholder_text: TODO
+    placeholder_text: Flux.error(new ToDoException());
 - name: src/HttpClient.java
   visible: true
 - name: test/TrickyHttpClient.java

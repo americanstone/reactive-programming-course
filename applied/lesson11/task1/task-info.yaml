@@ -8,13 +8,13 @@ files:
   placeholders:
   - offset: 237
     length: 419
-    placeholder_text: TODO
+    placeholder_text: Flux.error(new ToDoException());
 - name: src/Order.java
   visible: true
   placeholders:
-  - offset: 660
+  - offset: 659
     length: 149
-    placeholder_text: TODO
+    placeholder_text: Flux.error(new ToDoException());
 - name: src/ProductsCatalog.java
   visible: true
 - name: src/Product.java

@@ -6,7 +6,7 @@ files:
   placeholders:
   - offset: 242
     length: 42
-    placeholder_text: TODO
+    placeholder_text: Mono.error(new ToDoException());
 - name: test/Tests.java
   visible: false
 - name: build.gradle

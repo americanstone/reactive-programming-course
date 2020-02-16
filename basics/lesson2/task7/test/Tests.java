@@ -9,8 +9,8 @@ public class Tests {
 
 	@Test
 	public void testSolution() {
-		Mono<Long> sequence = Task.transformSequence(Flux.just(1L, 2L, 3L, 4L)
-		                                                 .hide());
+		Mono<Long> sequence = Task.firstFromFlux(Flux.just(1L, 2L, 3L, 4L)
+		                                             .hide());
 
 		StepVerifier.create(sequence)
 		            .expectNext(1L)

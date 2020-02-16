@@ -12,8 +12,8 @@ public class Tests {
 
 	@Test
 	public void testSolution() {
-		Mono<List<String>> sequence = Task.createSequence(Flux.range(0, 10)
-		                                                      .map(Objects::toString));
+		Mono<List<String>> sequence = Task.transformToList(Flux.range(0, 10)
+		                                                       .map(Objects::toString));
 
 		StepVerifier.create(sequence)
 		            .expectNext(Arrays.asList("0",

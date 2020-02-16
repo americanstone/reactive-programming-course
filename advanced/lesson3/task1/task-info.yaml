@@ -1,13 +1,13 @@
 type: edu
 custom_name: Task 1
 files:
-  - name: src/Task.java
-    visible: true
-    placeholders:
-      - offset: 190
-        length: 20
-        placeholder_text: TODO
-  - name: test/Tests.java
-    visible: false
-  - name: build.gradle
-    visible: false
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 190
+    length: 20
+    placeholder_text: Flux.error(new ToDoException());
+- name: test/Tests.java
+  visible: false
+- name: build.gradle
+  visible: false

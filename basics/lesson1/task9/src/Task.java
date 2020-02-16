@@ -7,7 +7,7 @@ public class Task {
 		return Flux.empty();
 	}
 
-	public static Flux<Void> createFluxWhichDoesNothing() {
+	public static Flux<Void> createFluxWhichNeverEmits() {
 		return Flux.never();
 	}
 
@@ -15,7 +15,7 @@ public class Task {
 		return Mono.empty();
 	}
 
-	public static Mono<Void> createMonoWhichDoesNothing() {
+	public static Mono<Void> createMonoWhichNeverEmits() {
 		return Mono.never();
 	}
 }

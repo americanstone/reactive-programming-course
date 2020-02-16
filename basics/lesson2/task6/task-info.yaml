@@ -1,13 +1,13 @@
 type: edu
 custom_name: Task 6
 files:
-  - name: src/Task.java
-    visible: true
-    placeholders:
-      - offset: 163
-        length: 23
-        placeholder_text: TODO
-  - name: test/Tests.java
-    visible: false
-  - name: build.gradle
-    visible: false
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 163
+    length: 23
+    placeholder_text: Mono.error(new ToDoException());
+- name: test/Tests.java
+  visible: false
+- name: build.gradle
+  visible: false

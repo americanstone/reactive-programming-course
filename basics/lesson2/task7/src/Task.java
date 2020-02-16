@@ -3,7 +3,7 @@ import reactor.core.publisher.Mono;
 
 public class Task {
 
-	public static Mono<Long> transformSequence(Flux<Long> flux) {
+	public static Mono<Long> firstFromFlux(Flux<Long> flux) {
 		return flux.next();
 	}
 }

@@ -6,16 +6,16 @@ files:
   placeholders:
   - offset: 166
     length: 13
-    placeholder_text: TODO
-  - offset: 243
-    length: 20
-    placeholder_text: TODO
-  - offset: 340
+    placeholder_text: Flux.error(new ToDoException());
+  - offset: 249
     length: 13
-    placeholder_text: TODO
-  - offset: 424
+    placeholder_text: Flux.error(new ToDoException());
+  - offset: 339
     length: 13
-    placeholder_text: TODO
+    placeholder_text: Mono.error(new ToDoException());
+  - offset: 422
+    length: 13
+    placeholder_text: Mono.error(new ToDoException());
 - name: test/Tests.java
   visible: false
 - name: build.gradle

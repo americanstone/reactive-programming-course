@@ -17,7 +17,7 @@ public class Order {
 		this.productsCatalog = Objects.requireNonNull(productsCatalog);
 	}
 
-	public Mono<Long> getTotalPrivce() {
+	public Mono<Long> getTotalPrice() {
 		return Flux.fromIterable(productsIds)
 		           .map(productsCatalog::findById)
 		           .reduce(0L, (summ, product2) -> summ + product2.getPrice());

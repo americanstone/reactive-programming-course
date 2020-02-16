@@ -18,7 +18,7 @@ public class Tests {
 
 	@Test
 	public void testFluxNever() {
-		Flux<Void> sequence = Task.createFluxWhichDoesNothing();
+		Flux<Void> sequence = Task.createFluxWhichNeverEmits();
 
 		StepVerifier.create(sequence)
 		            .expectSubscription()
@@ -38,7 +38,7 @@ public class Tests {
 
 	@Test
 	public void testMonoNever() {
-		Mono<Void> sequence = Task.createMonoWhichDoesNothing();
+		Mono<Void> sequence = Task.createMonoWhichNeverEmits();
 
 		StepVerifier.create(sequence)
 		            .expectSubscription()
