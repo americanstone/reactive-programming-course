@@ -6,6 +6,7 @@ public class Tests {
 
 	@Test
 	public void findVideoTest() {
+		// TODO add more tests
 		PaymentService service = new PaymentService();
 
 		StepVerifier.create(service.findPayments(Flux.range(1, 100)

@@ -4,5 +4,5 @@
     - `doBusinessLogic`
    
 <div class="hint">
-  Используйте Flux.generate(stateSupplier, (state, sink) -> state) и .startWith для передачи [0, 1, 1] последовательности
+  Используйте <code>Flux#transform</code> оператор высшего порядка для преобразований над <code>Flux</code> 
 </div>
