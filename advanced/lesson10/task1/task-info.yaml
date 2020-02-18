@@ -1,0 +1,25 @@
+type: edu
+custom_name: Task 1
+files:
+- name: build.gradle
+  visible: false
+- name: test/Tests.java
+  visible: false
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 429
+    length: 29
+    placeholder_text: "Last) Add BlockHound fix"
+  - offset: 463
+    length: 24
+    placeholder_text: "// 1) Add Better error printing"
+  - offset: 506
+    length: 20
+    placeholder_text: // FIXME
+  - offset: 603
+    length: 20
+    placeholder_text: // FIXME
+  - offset: 855
+    length: 223
+    placeholder_text: // Add BlockHound Integration
