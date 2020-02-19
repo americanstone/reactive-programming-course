@@ -1,7 +1,7 @@
-Преобразуйте `Flux<String>` слов в `Flux<Character>` букв
+Transform `Flux<String>` into `Flux<Character>` of chars.
    
 <div class="hint">
-  Используйте <code>Flux#flatMap</code> или <code>Flux#concatMap</code>
-  Используйте <code>String#split("")</code> чтобы разделить слово по буквам
-  Используйте <code>String#charAt(0)</code> что бы получить единственную букву в <code>char</code>
+  Use <code>Flux#flatMap</code> or <code>Flux#concatMap</code>
+  Use <code>String#split("")</code> to split word string into string of a single letter 
+  Use <code>String#charAt(0)</code> to take the first <code>char</code>
 </div>

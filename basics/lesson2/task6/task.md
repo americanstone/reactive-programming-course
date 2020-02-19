@@ -1,5 +1,5 @@
-Просуммируйте все елементы в `Flux<Long>`
+Sum all elements in the given `Flux<Long>`
    
 <div class="hint">
-  Используйте <code>Flux#reduce</code>
+  Use <code>Flux#reduce</code>
 </div>

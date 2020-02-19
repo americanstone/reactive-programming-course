@@ -1,5 +1,5 @@
-Преобразуйте `Flux` в `Flux` в котором есть только 2 последних елемента из придыдущего
+Take only two last elements from the given `Flux`
    
 <div class="hint">
-  Используйте <code>Flux#takeLast</code>
+  Use <code>Flux#takeLast</code>
 </div>

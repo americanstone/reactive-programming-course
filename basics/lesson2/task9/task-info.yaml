@@ -11,3 +11,5 @@ files:
   - offset: 172
     length: 12
     placeholder_text: Mono.error(new ToDoException());
+- name: task.ru.md
+  visible: false

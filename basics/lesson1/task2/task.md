@@ -1,5 +1,5 @@
-Сгенерируйте `Flux` из одного елемента
+Create a `Flux` ***just*** of a single element 
    
 <div class="hint">
-  Используйте Flux.just
+  Use <code>Flux.just(element)</code>
 </div>

@@ -1,5 +1,5 @@
-Сгенерируйте `Mono` из `Callable`
+Generate `Mono` from `Callable`
    
 <div class="hint">
-  Используйте Mono.fromCallback
+  Use <code>Mono.fromCallback(callable)</code>
 </div>

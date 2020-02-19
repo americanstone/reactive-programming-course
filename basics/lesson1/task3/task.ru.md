@@ -1,4 +1,4 @@
-Generate a `Flux` from array
+Сгенерируйте `Flux` из масива елементов
    
 <div class="hint">
   Используйте Flux.fromArray

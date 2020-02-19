@@ -1,5 +1,5 @@
-Создайте `Flux` от `[0..20]`
+Create `Flux` that emits in ***range*** `[0..20)`
    
 <div class="hint">
-  Используйте Flux.range
+  Use <code>Flux.range(index, count)</code>
 </div>

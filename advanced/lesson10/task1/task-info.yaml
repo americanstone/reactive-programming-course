@@ -10,10 +10,10 @@ files:
   placeholders:
   - offset: 429
     length: 29
-    placeholder_text: "Last) Add BlockHound fix"
+    placeholder_text: /*Last) Add BlockHound fix*/
   - offset: 463
     length: 24
-    placeholder_text: "// 1) Add Better error printing"
+    placeholder_text: // 1) Add Better error printing
   - offset: 506
     length: 20
     placeholder_text: // FIXME

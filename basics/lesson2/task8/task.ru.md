@@ -1,4 +1,4 @@
-Collect all elements in `Flux` into list
+Соберите все элементы из `Flux` в коллекцию
    
 <div class="hint">
   Используйте <code>Flux#collectList</code>

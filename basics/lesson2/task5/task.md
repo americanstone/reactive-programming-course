@@ -1,8 +1,9 @@
-Преобразуйте `Flux` используя данные функии `validate` и `doBusinessLogic` в следующей последовательности:
+Transform `Flux` using high-order functions `validate` and `doBusinessLogic` in the
+ following order:
 
     - `validate`
     - `doBusinessLogic`
    
 <div class="hint">
-  Используйте <code>Flux#transform</code> оператор высшего порядка для преобразований над <code>Flux</code> 
+  Use <code>Flux#transform</code> that lets transformation on current <code>Flux</code> 
 </div>

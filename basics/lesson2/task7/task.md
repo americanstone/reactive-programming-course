@@ -1,5 +1,5 @@
-Преобразуйте `Flux` в `Mono` используя первый полученный елемент из `Flux`
+Transform `Flux` into `Mono` from the first emitted signal `Flux`
    
 <div class="hint">
-  Используйте <code>Flux#next</code> или <code>Flux#single</code>
+  Use <code>Flux#next()</code> or <code>Flux#take(1)</code> and <code>Flux#single()</code>
 </div>

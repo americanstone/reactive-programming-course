@@ -1,5 +1,5 @@
-Отфильтруйте даный `Flux<String>` по условию длина слова больше 3ех 
+Filter given `Flux<String>` where every `String` should be longer than 3 character 
    
 <div class="hint">
-  Используйте оператор <code>Flux#filter</code>
+  Use <code>Flux#filter</code>
 </div>

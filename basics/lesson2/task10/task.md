@@ -1,5 +1,5 @@
-Преобразуйте асинхронный функцилнальный `Flux` в императивный код и добудьте последний елемент 
+Wait for the last element in the `Flux` in the blocking fashion 
    
 <div class="hint">
-  Используйте <code>Flux#blockLast</code>
+  Use <code>Flux#blockLast</code>
 </div>

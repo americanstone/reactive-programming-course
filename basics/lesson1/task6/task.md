@@ -1,5 +1,5 @@
-Сгенерируйте `Flux` с интервалом отправки элементов
+Create `Flux` which emits elements in ***interval*** 
    
 <div class="hint">
-  Используйте <code>Flux.interval()</code>
+  Use <code>Flux.interval(Duration)</code>
 </div>

@@ -20,3 +20,5 @@ files:
   visible: false
 - name: build.gradle
   visible: false
+- name: task.ru.md
+  visible: false

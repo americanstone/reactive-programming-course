@@ -1,5 +1,5 @@
-Превратите `CompletionStage` в поток типа `Publisher`
+Adapt `CompletionStage` to `Publisher` using Project Reactor
    
 <div class="hint">
-  Используйте Mono.fromCompletionStage
+  Use <code>Mono.fromCompletionStage(future)</code>
 </div>

@@ -1,5 +1,5 @@
-Проигнорируйте все елементы и дождитесь окончания `Flux` не блокируя поток
+Ignore all elements from `Flux` and ***then*** propagate `onComplete` only
    
 <div class="hint">
-  Используйте <code>Flux#then</code>
+  Use <code>Flux#then</code>
 </div>

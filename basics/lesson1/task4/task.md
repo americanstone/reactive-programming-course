@@ -1,5 +1,5 @@
-Сгенерируйте `Flux` из `Stream`
+Create `Flux` from Java `Stream`
    
 <div class="hint">
-  Используйте Flux.fromStream
+  Use <code>Flux.fromStream(stream)</code>
 </div>
