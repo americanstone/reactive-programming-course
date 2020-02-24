@@ -7,7 +7,9 @@ files:
   - offset: 190
     length: 20
     placeholder_text: Flux.error(new ToDoException());
-- name: test/Tests.java
-  visible: false
 - name: build.gradle
+  visible: false
+- name: task.ru.html
+  visible: false
+- name: test/Tests.java
   visible: false

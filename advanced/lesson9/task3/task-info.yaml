@@ -1,0 +1,16 @@
+type: edu
+custom_name: Task 2
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 513
+    length: 441
+    placeholder_text: // TODO Check Success Case;
+  - offset: 1118
+    length: 372
+    placeholder_text: // TODO Check Failure Case;
+- name: build.gradle
+  visible: false
+- name: test/Tests.java
+  visible: false

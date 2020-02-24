@@ -1,13 +1,15 @@
 <html>
-Объедените несколько источников елементов (<code>Publisher</code>) в один общий
-<code>Flux</code> таким образом что бы все элементы из под-<code>Flux</code> пришли в том
-же порядке что и при генерации под-<code>Flux</code>:
-К примеру:
+Merge all streams (<code>Publisher</code>) into a single
+<code>Flux</code> in the way the order of all elements are corresponding to the order
+in which <code>Flux</code>es' are merged.
 
-<!--TODO: вставить marble диаграму-->
+<!--TODO: add diagram-->
+
+
 
 <div class="hint">
-    Используйте <code>Flux.mergeSequential</code>. Обратите внимание, <code>Flux.mergeSequential</code>
-    работает идентично с <code>Flux#flatMapSequential</code>
+    Use <code>Flux.mergeSequential</code>. Pay attention, <code>Flux
+    .mergeSequential</code>
+    works identically to <code>Flux#flatMapSequential</code>
 </div>
 </html>

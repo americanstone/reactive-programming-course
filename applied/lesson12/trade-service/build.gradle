@@ -1,0 +1,10 @@
+dependencies {
+
+  compile 'org.mongodb:mongodb-driver-reactivestreams:' + mongoReactiveDriverVersion
+  compile 'com.fasterxml.jackson.core:jackson-databind:' + jacksonVersion
+  compile 'io.r2dbc:r2dbc-spi'
+  compile 'io.r2dbc:r2dbc-client:0.8.0.RC2'
+  compile project(':applied-lesson12-trade-service-idl')
+  compile project(':applied-lesson12-crypto-service-idl')
+  compile project(':applied-lesson12-common')
+}

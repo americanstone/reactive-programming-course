@@ -1,4 +1,8 @@
 import java.time.Duration;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -11,58 +15,38 @@ public class Tests {
 
 	@Test
 	public void testSolution() {
-		Thread[] threads = new Thread[3];
-		StepVerifier.create(Task.paralellizeLongRunningWorkOnUnboundedAmountOfThread(Flux.<Callable<String>>just(
-				() -> {
-					threads[0] = Thread.currentThread();
-					Thread.sleep(300);
-					return "Hello";
-				},
-				() -> {
-					threads[1] = Thread.currentThread();
-					Thread.sleep(300);
-					return "Hello";
-				},
-				() -> {
-					threads[2] = Thread.currentThread();
-					Thread.sleep(300);
-					return "Hello";
-				}).repeat(20)))
-		            .expectSubscription()
-		            .expectNext("Hello", "Hello", "Hello")
-		            .expectNextCount(60)
-		            .expectComplete()
-		            .verify(Duration.ofMillis(600));
+		Queue<Thread> threadsQueueOnGenerate = new LinkedList<>();
+		Queue<Thread> threadsQueueOnWork1 = new LinkedList<>();
+		Queue<Thread> threadsQueueOnWork2 = new LinkedList<>();
+		StepVerifier
+				.create(Task.modifyStreamExecution(
+					Flux.<Long, Long>generate(() -> 0L, (s, sink) -> {
+						sink.next(s);
+						threadsQueueOnGenerate.add(Thread.currentThread());
+						return s + 1;
+					}).take(10000),
+					(e) -> {
+						threadsQueueOnWork1.add(Thread.currentThread());
+						return e;
+					},
+					(e) -> {
+						threadsQueueOnWork2.add(Thread.currentThread());
+						return e;
+					}
+				).limitRate(32))
+	            .expectSubscription()
+	            .expectNextCount(10000)
+	            .expectComplete()
+	            .verify(Duration.ofMillis(2000));
 
-		Assertions.assertThat(threads[0])
-		          .as("Expected execution on different Threads")
-		          .isNotNull()
-		          .isNotEqualTo(threads[1]);
-		Assertions.assertThat(threads[1])
-		          .as("Expected execution on different Threads")
-		          .isNotEqualTo(threads[2]);
-		Assertions.assertThat(threads[0])
-		          .as("Expected execution on different Threads")
-		          .isNotEqualTo(threads[2]);
-	}
-	@Test
-	public void testSolution1() {
-		ConcurrentHashMap<Thread, Object> threads = new ConcurrentHashMap<>();
-		StepVerifier.create(Task.paralellizeLongRunningWorkOnUnboundedAmountOfThread(Flux.<Callable<String>>just(
-				() -> {
-					threads.put(Thread.currentThread(), 1);
-					Thread.sleep(500);
-					return "Hello";
-				}).repeat(256)))
-		            .expectSubscription()
-		            .expectNext("Hello", "Hello", "Hello")
-		            .expectNextCount(254)
-		            .expectComplete()
-		            .verify(Duration.ofMillis(10000));
+		Assertions.assertThat(threadsQueueOnGenerate)
+		          .hasSameSizeAs(threadsQueueOnWork1)
+		          .containsExactlyElementsOf(threadsQueueOnWork1)
+				  .allMatch(t -> t.getName().startsWith("single-"));
 
-		Assertions.assertThat(threads)
-		          .as("Expected execution on different Threads")
-		          .isNotNull()
-		          .hasSize(256);
+		Assertions.assertThat(threadsQueueOnWork2)
+		          .doesNotContainAnyElementsOf(threadsQueueOnGenerate)
+		          .allMatch(t -> t.getName().startsWith("parallel-"));
+
 	}
 }

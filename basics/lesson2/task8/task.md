@@ -1,5 +1,5 @@
 Collect all elements in `Flux` into list
    
 <div class="hint">
-  Используйте <code>Flux#collectList</code>
+  Use <code>Flux#collectList</code>
 </div>

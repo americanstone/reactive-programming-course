@@ -7,11 +7,11 @@ import reactor.core.scheduler.Schedulers;
 
 public class Task {
 
-	public static Publisher<String> timeoutBlockingOperation(Callable<String> longRunningCall,
+	public static Mono<String> timeoutBlockingOperation(Callable<String> longRunningCall,
 			Duration duration,
 			String fallback) {
 		return Mono.fromCallable(longRunningCall)
-		           .subscribeOn(Schedulers.elastic())
+		           .subscribeOn(Schedulers.boundedElastic())
 		           .timeout(duration, Mono.just(fallback));
 	}
 }

@@ -1,0 +1,19 @@
+type: edu
+custom_name: Price Service
+files:
+- name: build.gradle
+  visible: false
+- name: test/service/impl/Tests.java
+  visible: false
+- name: src/service/impl/DefaultPriceService.java
+  visible: true
+  placeholders:
+  - offset: 1787
+    length: 95
+    placeholder_text: Flux.never();
+  - offset: 2067
+    length: 44
+    placeholder_text: Flux.never();
+  - offset: 2822
+    length: 740
+    placeholder_text: Flux.never();

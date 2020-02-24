@@ -8,18 +8,16 @@ public class Tests {
 
 	@Test
 	public void testSolution() {
-		StepVerifier.withVirtualTime(() -> Task.fromFirstEmitted(Flux.just("a")
-		                                                             .delaySubscription(
-				                                                             Duration.ofSeconds(
-						                                                             1)),
-				Flux.just("b", "c")
-				    .delaySubscription(Duration.ofMillis(100)),
-				Flux.just("D", "Z")
-				    .delaySubscription(Duration.ofMillis(10))))
-		            .expectSubscription()
-		            .expectNoEvent(Duration.ofMillis(10))
-		            .expectNext("D", "Z")
-		            .expectComplete()
-		            .verify(Duration.ofMillis(4000));
+		StepVerifier
+			.withVirtualTime(() -> Task.fromFirstEmitted(
+				Flux.just("a").delaySubscription(Duration.ofSeconds(1)),
+				Flux.just("b", "c").delaySubscription(Duration.ofMillis(100)),
+				Flux.just("D", "Z").delaySubscription(Duration.ofMillis(10)))
+			)
+            .expectSubscription()
+            .expectNoEvent(Duration.ofMillis(10))
+            .expectNext("D", "Z")
+            .expectComplete()
+            .verify(Duration.ofMillis(4000));
 	}
 }

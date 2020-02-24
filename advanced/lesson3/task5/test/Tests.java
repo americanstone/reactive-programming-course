@@ -9,18 +9,19 @@ public class Tests {
 
 	@Test
 	public void testSolution() {
-		StepVerifier.create(Flux.from(Task.groupWordsByFirstLatter(Flux.just("ABC",
-				"BCD",
+		StepVerifier
+			.create(Flux.from(Task.groupWordsByFirstLatter(Flux.just(
+				"ABCA",
+				"BCDBB",
 				"CDE",
 				"BEF",
 				"ADE",
 				"CFG")))
-		                        .flatMap(gf -> gf.collectList()
-		                                         .map(l -> Tuples.of(gf.key(), l))))
-		            .expectSubscription()
-		            .expectNext(Tuples.of('A', Arrays.asList("ABC", "ADE")))
-		            .expectNext(Tuples.of('B', Arrays.asList("BCD", "BEF")))
-		            .expectNext(Tuples.of('C', Arrays.asList("CDE", "CFG")))
-		            .verifyComplete();
+			)
+            .expectSubscription()
+            .expectNext(Tuples.of('A', 3))
+            .expectNext(Tuples.of('B', 4))
+            .expectNext(Tuples.of('C', 2))
+            .verifyComplete();
 	}
 }

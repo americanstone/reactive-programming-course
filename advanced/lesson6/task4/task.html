@@ -1,7 +1,7 @@
 <html>
-Убедитесь что <Code>CompletionStage</Code> выполняеться не более 1 секунды. В обратном
-случае отмените выполнение и верните fallback
+Make sure that <Code>CompletionStage</Code> executes no longer that a second. Otherwise
+return a fallback
 <div class="hint">
-    Используйте <code>Mono#timeout</code>
+    Use <code>Mono#timeout(Duration, Mono)</code>
 </div>
 </html>

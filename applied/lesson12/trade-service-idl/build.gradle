@@ -1,0 +1,3 @@
+dependencies {
+  compile project(":applied-lesson12-common")
+}

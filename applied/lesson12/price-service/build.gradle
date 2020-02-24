@@ -1,0 +1,5 @@
+dependencies {
+  compile project(":applied-lesson12-price-service-idl")
+  compile project(":applied-lesson12-crypto-service-idl")
+  compile project(":applied-lesson12-common")
+}

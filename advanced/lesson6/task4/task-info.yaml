@@ -6,7 +6,7 @@ files:
   placeholders:
   - offset: 318
     length: 86
-    placeholder_text: Flux.error(new ToDoException());
+    placeholder_text: Mono.error(new ToDoException());
 - name: test/Tests.java
   visible: false
 - name: build.gradle

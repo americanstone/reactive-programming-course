@@ -4,10 +4,18 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 251
+  - offset: 358
+    length: 97
+    placeholder_text: Flux.error(new ToDoException());
+  - offset: 561
     length: 32
+    placeholder_text: Flux.error(new ToDoException());
+  - offset: 738
+    length: 340
     placeholder_text: Flux.error(new ToDoException());
 - name: test/Tests.java
   visible: false
 - name: build.gradle
+  visible: false
+- name: task.ru.html
   visible: false

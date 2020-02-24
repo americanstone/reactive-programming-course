@@ -4,9 +4,9 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 328
-    length: 523
-    placeholder_text: new BaseSubscriber();
+  - offset: 214
+    length: 81
+    placeholder_text: Flux.error(new ToDoException());
 - name: test/Tests.java
   visible: false
 - name: build.gradle

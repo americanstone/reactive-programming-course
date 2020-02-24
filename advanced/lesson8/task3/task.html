@@ -1,10 +1,10 @@
 <html>
-Перепишите код таким образом что бы контекст <code>contextA</code> был доступен только
-<code>sourceA</code> а <code>contextB</code> был доступен только
+Rewrite code in such a way so <code>contextA</code> is available only for
+<code>sourceA</code> and <code>contextB</code> only for
 <code>sourceB</code>
 
-<!--<div class="hint">-->
-<!--    Используйте <code>Flux.concat</code>. Обратите внимание, <code>Flux.concat</code>-->
-<!--    работает идентично с <code>Flux#concatMap</code>-->
-<!--</div>-->
+<div class="hint">
+    Note, <code>flux1.mergeWith(flux2)</code> under the hood is
+    <code>Flux.merge(flux1, flux2)</code>
+</div>
 </html>

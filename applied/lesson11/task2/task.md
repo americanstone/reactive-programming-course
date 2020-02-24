@@ -1,1 +1,1 @@
-Используя данный список контент серверов, отправте поисковый запрос на все сервера и скачайте результат из первого ответившего
+Using the given set of content servers, perform a search on all of them and "download" a result from the most fastest 

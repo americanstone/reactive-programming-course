@@ -1,4 +1,4 @@
-1) Добавте логуки в <code>UserActivityUtils.java</code> таким образом что бы тот 
-искал наиболее дорогой продукт в покупе
-2) Отредактируйте метод `Order#getTotalPrice
-` таким образом что бы тот считал общюю стоимость продуктов в покупке
+1) Implement business logic <code>UserActivityUtils.java</code> in such a way, so it
+ provides you with the most expensive product in the given order 
+2) Edit method `Order#getTotalPrice` so it calculates total order price (sum all the
+ costs for all the products in order)

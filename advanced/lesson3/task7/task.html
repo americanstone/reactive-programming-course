@@ -1,8 +1,7 @@
 <html>
-Объедените элементы из нескольких <code>Publisher</code> подобно <code>Flux.zip</code>
-но таким образом что бы медленный поток не блокировал отправку элементов изза наиболее
-медленного
+Combine elements from <code>Publisher</code>'s similarly to <code>Flux.zip</code>
+but in the way to combine every new element with the latest observed from the neighbors
 <div class="hint">
-    Используйте <code>Flux.combineLatest</code>
+    Use <code>Flux.combineLatest</code>
 </div>
 </html>

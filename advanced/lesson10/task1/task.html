@@ -1,7 +1,10 @@
 <html>
-Найдите источник ошибки и исправте его.
-Блокирующие операции в MyCallable должны быть разрешени (legacy code)
+Find a source of failure and fix it.
+<code>MyCallable</code> is an allowed source of blocking calls. Makes sure a proper
+exclusion for <code>BlockHound</code> is written
 <div class="hint">
-    Используйте <code>BlockHound</code>
+    Use <code>BlockHoundIntegration</code>
+    Use <code>Hooks.onOperatorDebug</code>
+    Use <code>ReactorDebugAgent</code>
 </div>
 </html>

@@ -1,8 +1,8 @@
-Используя `Flux` API вам необходимо:
+***Using*** `Flux` API do the following:
 
-  1) Открыть файл когда подписались
-  2) Асинхронно считать данные
-  3) Закрыть стрим только на терминальной операции
+  1) Open File safely (use `Files.lines` API)
+  2) Asynchronously read all the lines 
+  3) Close opened resource on terminal operation
   
 <div class="hint">
     Используйте <code>Flux.using</code> для решения задачи

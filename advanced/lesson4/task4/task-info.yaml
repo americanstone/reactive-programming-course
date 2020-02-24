@@ -4,9 +4,9 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 364
-    length: 159
-    placeholder_text: Flux.error(new ToDoException());
+  - offset: 452
+    length: 113
+    placeholder_text: flux .map(work1) .map(work2);
 - name: test/Tests.java
   visible: false
 - name: build.gradle

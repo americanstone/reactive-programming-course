@@ -1,8 +1,11 @@
 import java.util.ArrayList;
+import java.util.concurrent.CancellationException;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.reactivestreams.Publisher;
+import reactor.core.publisher.BaseSubscriber;
+import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Hooks;
 import reactor.core.publisher.ReplayProcessor;
@@ -23,8 +26,9 @@ public class Tests {
 			UnicastProcessor<String> source = UnicastProcessor.create();
 			ReplayProcessor<String> consumer1 = ReplayProcessor.create(10);
 			ReplayProcessor<String> consumer2 = ReplayProcessor.create(10);
+			ReplayProcessor<String> consumer3 = ReplayProcessor.create(10);
 
-			Publisher<String> publisher = Task.transformToHot1(source);
+			Publisher<String> publisher = Task.transformToHotWithOperator(source);
 
 			publisher.subscribe(consumer1);
 
@@ -40,6 +44,8 @@ public class Tests {
 
 			source.onComplete();
 
+			publisher.subscribe(consumer3);
+
 			StepVerifier.create(consumer1)
 			            .expectSubscription()
 			            .expectNext("A", "B", "C", "D", "E", "F")
@@ -47,7 +53,12 @@ public class Tests {
 
 			StepVerifier.create(consumer2)
 			            .expectSubscription()
-			            .expectNext("D", "E", "F")
+			            .expectNext("A", "B", "C", "D", "E", "F")
+			            .verifyComplete();
+
+			StepVerifier.create(consumer3)
+			            .expectSubscription()
+			            .expectNext("A", "B", "C", "D", "E", "F")
 			            .verifyComplete();
 		}
 		finally {
@@ -73,10 +84,12 @@ public class Tests {
 
 		try {
 			UnicastProcessor<String> source = UnicastProcessor.create();
-			ReplayProcessor<String> consumer1 = ReplayProcessor.create(10);
-			ReplayProcessor<String> consumer2 = ReplayProcessor.create(10);
+			EmitterProcessor<String> consumer1 = EmitterProcessor.create(true);
+			EmitterProcessor<String> consumer2 = EmitterProcessor.create(true);
+			BaseSubscriber<String> consumer3 = new BaseSubscriber<String>() {
+			};
 
-			Publisher<String> publisher = Task.transformToHot2(source);
+			Publisher<String> publisher = Task.transformToHotWithOperator(source);
 
 			publisher.subscribe(consumer1);
 
@@ -90,17 +103,27 @@ public class Tests {
 			source.onNext("E");
 			source.onNext("F");
 
-			source.onComplete();
+			publisher.subscribe(consumer3);
+
+			consumer3.dispose();
 
 			StepVerifier.create(consumer1)
 			            .expectSubscription()
 			            .expectNext("A", "B", "C", "D", "E", "F")
-			            .verifyComplete();
+			            .thenCancel()
+			.verify();
 
 			StepVerifier.create(consumer2)
 			            .expectSubscription()
-			            .expectNext("D", "E", "F")
-			            .verifyComplete();
+			            .expectNext("A", "B", "C", "D", "E", "F")
+			            .thenCancel()
+			.verify();
+
+			Assertions.assertThat(consumer3.isDisposed())
+			          .isTrue();
+
+			Assertions.assertThat(source.isDisposed())
+			          .isTrue();
 		}
 		finally {
 			Hooks.resetOnEachOperator();
@@ -108,7 +131,7 @@ public class Tests {
 
 		Assertions.assertThat(operators)
 		          .as("Expected usage of built-in operator")
-		          .noneMatch(p -> p.getClass()
+		          .anyMatch(p -> p.getClass()
 		                          .equals(Flux.just(1)
 		                                      .hide()
 		                                      .publish()
