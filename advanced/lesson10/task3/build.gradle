@@ -1,0 +1,7 @@
+dependencies {
+  compile 'io.projectreactor.tools:blockhound:1.0.2.RELEASE'
+  compile 'io.projectreactor:reactor-tools'
+  compile 'io.projectreactor:reactor-core'
+  compile 'io.projectreactor:reactor-test'
+  compile 'io.micrometer:micrometer-core'
+}
