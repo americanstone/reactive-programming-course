@@ -1,5 +1,5 @@
 type: edu
-custom_name: Task 1
+custom_name: Task 4
 files:
 - name: test/Tests.java
   visible: false
