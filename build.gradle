@@ -46,6 +46,9 @@ subprojects {
         compile platform('io.projectreactor:reactor-bom:' + reactorBomVersion)
         compile platform('io.r2dbc:r2dbc-bom:' + r2dbcBomVersion)
         compile platform('io.micrometer:micrometer-bom:' + micrometerBomVersion)
+        
+        compile 'ch.qos.logback:logback-core:' + logbackVersion
+        compile 'ch.qos.logback:logback-classic:' + logbackVersion
 
         testCompile platform('org.junit:junit-bom:' + junitBomVersion)
         testCompile platform('io.projectreactor:reactor-bom:' + reactorBomVersion)

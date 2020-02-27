@@ -3,23 +3,21 @@ package repository.impl;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.logging.Logger;
 
 import domain.Trade;
 import io.r2dbc.client.Handle;
 import io.r2dbc.client.R2dbc;
 import io.r2dbc.client.Update;
 import io.r2dbc.spi.ConnectionFactory;
-import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 import repository.TradeRepository;
 
 public class H2TradeRepository implements TradeRepository {
-    private static final Logger log = Logger.getLogger("h2-repo");
+    private static final Logger log = LoggerFactory.getLogger("h2-repo");
 
     private static String INIT_DB =
         "CREATE TABLE trades (" +

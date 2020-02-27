@@ -2,15 +2,19 @@ package service.impl;
 
 import java.time.Duration;
 import java.util.Map;
-import java.util.logging.Logger;
+import java.util.logging.Level;
 
+import com.mongodb.MongoException;
 import domain.Trade;
 import domain.utils.DomainMapper;
 import dto.MessageDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.MonoProcessor;
+import reactor.retry.Retry;
 import repository.TradeRepository;
 import service.CryptoService;
 import service.TradeService;
@@ -18,7 +22,7 @@ import service.utils.MessageMapper;
 
 public class DefaultTradeService implements TradeService {
 
-	private static final Logger logger = Logger.getLogger("trade-service");
+	private static final Logger logger = LoggerFactory.getLogger("trade-service");
 
 	private final Flux<MessageDTO<MessageDTO.Trade>> sharedStream;
 
@@ -75,7 +79,7 @@ public class DefaultTradeService implements TradeService {
 			.bufferWhen(
 				Flux.interval(Duration.ZERO, Duration.ofSeconds(1))
 				    .onBackpressureDrop()
-				    .delayUntil(__ -> intervalNotifier.next()),
+				    .concatMap(v -> Mono.just(v).delayUntil(__ -> intervalNotifier.next()), 1),
 				e -> delayNotifier.zipWith(Mono.delay(Duration.ofMillis(1000)))
 			)
 			.concatMap(trades -> {
@@ -90,14 +94,24 @@ public class DefaultTradeService implements TradeService {
 					.zip(
 						tradeRepository1
 							.saveAll(trades)
-							.log("trade1")
 							.timeout(Duration.ofSeconds(1))
-							.retryBackoff(100, Duration.ofMillis(500),
-									Duration.ofMillis(5000))
+							.retryWhen(Retry
+								.onlyIf(rc -> {
+									Throwable exception = rc.exception();
+									if (exception instanceof MongoException) {
+										return ((MongoException) exception).getCode() != 11000;
+									}
+
+									return true;
+								})
+								.retryMax(100)
+								.randomBackoff(Duration.ofMillis(100), Duration.ofSeconds(5))
+							)
+							.onErrorResume(MongoException.class, t -> Mono.empty())
 							.thenReturn(1),
 						tradeRepository2
 							.saveAll(trades)
-							.log("trade2")
+							.log("test", Level.INFO)
 							.timeout(Duration.ofSeconds(1))
 							.retryBackoff(100, Duration.ofMillis(500),
 									Duration.ofMillis(5000))

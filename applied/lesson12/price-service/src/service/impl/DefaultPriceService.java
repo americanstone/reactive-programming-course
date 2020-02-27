@@ -3,9 +3,10 @@ package service.impl;
 import java.time.Duration;
 import java.util.Map;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import dto.MessageDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import service.CryptoService;
@@ -15,7 +16,7 @@ import service.utils.Sum;
 
 public class DefaultPriceService implements PriceService {
 
-	private static final Logger logger = Logger.getLogger("price-service");
+	private static final Logger logger = LoggerFactory.getLogger("price-service");
 
 	private static final long DEFAULT_AVG_PRICE_INTERVAL = 30L;
 
@@ -23,10 +24,10 @@ public class DefaultPriceService implements PriceService {
 
 	public DefaultPriceService(CryptoService cryptoService) {
 		sharedStream = cryptoService.eventsStream()
-		                            .log("Incoming event: {}", Level.FINEST)
+		                            .log("Incoming event: {}", Level.INFO)
 		                            .transform(this::selectOnlyPriceUpdateEvents)
 		                            .transform(this::currentPrice)
-		                            .log("Price event: {}", Level.FINEST);
+		                            .log("Price event: {}", Level.INFO);
 	}
 
 	public Flux<MessageDTO<Float>> pricesStream(Flux<Long> intervalPreferencesStream) {

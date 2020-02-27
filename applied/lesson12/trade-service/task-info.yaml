@@ -8,14 +8,14 @@ files:
 - name: src/service/impl/DefaultTradeService.java
   visible: true
   placeholders:
-  - offset: 1742
+  - offset: 1868
     length: 130
     placeholder_text: Mono.never();
-  - offset: 2036
+  - offset: 2162
     length: 37
     placeholder_text: Mono.never();
-  - offset: 2234
-    length: 1256
+  - offset: 2360
+    length: 1615
     placeholder_text: return Mono.never();
 - name: src/repository/TradeRepository.java
   visible: true

@@ -1,12 +1,13 @@
 
 import java.io.IOException;
 import java.util.function.BiFunction;
-import java.util.logging.Logger;
 
 import com.example.part_10.utils.NettyUtils;
 import com.mongodb.reactivestreams.client.MongoClients;
 import controller.WSHandler;
 import org.reactivestreams.Publisher;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.netty.http.server.HttpServer;
 import reactor.netty.http.websocket.WebsocketInbound;
@@ -23,17 +24,17 @@ import service.impl.DefaultPriceService;
 import service.impl.DefaultTradeService;
 import utils.EmbeddedMongo;
 import utils.JsonUtils;
-import utils.LoggerConfigurationTrait;
 import utils.MetricsConfig;
 
 import static utils.H2Helper.createInMemH2;
 import static utils.HttpResourceResolver.resourcePath;
 
-public class ApplicationRunner extends LoggerConfigurationTrait {
+public class ApplicationRunner {
 
-	private static final Logger logger = Logger.getLogger("http-server");
+	private static final Logger logger = LoggerFactory.getLogger("http-server");
 
 	public static void main(String[] args) throws IOException {
+
 		EmbeddedMongo.run();
 		Loggers.useSl4jLoggers();
 		MetricsConfig.init();

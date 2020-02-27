@@ -4,16 +4,17 @@ import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import io.socket.client.IO;
 import io.socket.client.Socket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxSink;
 import service.external.utils.MessageUnpacker;
 
 class CryptoCompareClient {
-    private static final Logger logger = Logger.getLogger("external-trading-service");
+    private static final Logger logger = LoggerFactory.getLogger("external-trading-service");
 
     static Flux<Map<String, Object>> connect(Flux<String> input, Collection<MessageUnpacker> unpackers) {
         return Flux.defer(() -> Flux.create(sink -> {
