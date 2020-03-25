@@ -60,7 +60,7 @@ public class H2TradeRepository implements TradeRepository {
         h2Client.withHandle(t -> t
             .createQuery("SELECT 6")
             .mapResult(result -> result.map((row, metadata) -> row.get(0))))
-            .doOnNext(e -> log.info("RESULT FOR SELECT 6 QUERY: " + e))
+            .doOnNext(e -> log.warn("RESULT FOR SELECT 6 QUERY: " + e))
             .subscribe();
     }
 

@@ -1,6 +1,14 @@
 type: edu
 custom_name: Application
 files:
+- name: resources/ui/main.js
+  visible: true
+- name: resources/ui/main.js
+  visible: true
+- name: resources/ui/index.html
+  visible: true
+- name: resources/ui/favicon.ico
+  visible: true
 - name: build.gradle
   visible: false
 - name: test/Tests.java

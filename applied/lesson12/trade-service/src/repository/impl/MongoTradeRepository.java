@@ -37,7 +37,8 @@ public class MongoTradeRepository implements TradeRepository {
 	private void reportDbStatistics() {
 		Flux.interval(Duration.ofSeconds(5))
 		    .flatMap(i -> this.getTradeStats())
-		    .doOnNext(count -> log.info("------------- [DB STATS] ------------ Trades stored in DB: " + count))
+		    .doOnNext(count -> log.warn("------------- [DB STATS] ------------ Trades " +
+				    "stored in DB: " + count))
 		    .subscribeOn(Schedulers.elastic())
 		    .subscribe();
 	}

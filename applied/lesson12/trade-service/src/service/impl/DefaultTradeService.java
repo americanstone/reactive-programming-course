@@ -82,6 +82,7 @@ public class DefaultTradeService implements TradeService {
 				    .concatMap(v -> Mono.just(v).delayUntil(__ -> intervalNotifier.next()), 1),
 				e -> delayNotifier.zipWith(Mono.delay(Duration.ofMillis(1000)))
 			)
+			.doOnNext(__ -> logger.warn(".buffer(Duration.ofMillis(100)) onNext(" + __ + ")"))
 			.concatMap(trades -> {
 				if (trades.isEmpty()) {
 					return Mono
