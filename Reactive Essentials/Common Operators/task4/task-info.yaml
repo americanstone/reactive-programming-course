@@ -1,0 +1,15 @@
+type: edu
+custom_name: Task 4
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 140
+    length: 23
+    placeholder_text: Flux.error(new ToDoException());
+- name: test/CommonOperatorsTask4Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: false

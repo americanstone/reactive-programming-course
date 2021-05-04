@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 5
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 306
+    length: 143
+    placeholder_text: Mono.error(new ToDoException());
+- name: test/ResilienceTask5Tests.java
+  visible: false
+- name: build.gradle
+  visible: false

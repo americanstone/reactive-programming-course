@@ -1,0 +1,16 @@
+type: edu
+custom_name: Task 4
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 324
+    length: 33
+    placeholder_text: // fixme
+  - offset: 362
+    length: 33
+    placeholder_text: // fixme
+- name: test/MultithreadingOperatorsTask4Tests.java
+  visible: false
+- name: build.gradle
+  visible: false

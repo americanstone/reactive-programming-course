@@ -1,0 +1,28 @@
+type: edu
+custom_name: Blocking Payment Service
+files:
+- name: test/CPTask3Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: src/PaymentService.java
+  visible: true
+- name: src/ConnectionsPool.java
+  visible: true
+- name: src/Payment.java
+  visible: true
+- name: src/PaymentsHistoryJpaRepository.java
+  visible: true
+- name: src/PaymentsHistoryReactiveJpaRepository.java
+  visible: true
+- name: src/BlockingPaymentsHistoryJpaRepository.java
+  visible: true
+- name: src/ReactivePaymentsHistoryJpaRepositoryAdapter.java
+  visible: true
+  placeholders:
+  - offset: 279
+    length: 238
+    placeholder_text: // use ExecutorService or Scheduler to offload blocking calls
+  - offset: 923
+    length: 122
+    placeholder_text: Flux.error(new ToDoException());

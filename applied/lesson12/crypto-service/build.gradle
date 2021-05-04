@@ -1,5 +1,0 @@
-dependencies {
-  compile project(":applied-lesson12-crypto-service-idl")
-
-  compile 'io.socket:socket.io-client:' + socketIOVersion
-}

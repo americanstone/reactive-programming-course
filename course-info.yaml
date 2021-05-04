@@ -1,11 +1,12 @@
+type: edu
 title: Reactive Programming Course
 language: English
 summary: Reactive Programming With Spring And Project Reactor Course
+vendor:
+  name: Oleh Dokuka
 programming_language: Java
-programming_language_version: 8
 solutions_hidden: false
-type: edu
 content:
-- basics
-- advanced
-- applied
+- Reactive Essentials
+- Reactive Advanced
+- Reactive In Action

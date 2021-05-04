@@ -1,0 +1,15 @@
+type: edu
+custom_name: Task 2
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 200
+    length: 30
+    placeholder_text: Flux.merge(sources);
+- name: test/MultipleSourcesTask2Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: task.ru.html
+  visible: false

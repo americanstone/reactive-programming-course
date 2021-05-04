@@ -1,4 +1,0 @@
-dependencies {
-//  compile "io.r2dbc:r2dbc-h2:${property("r2dbc.version")}"
-//  compile "io.r2dbc:r2dbc-client:${property("r2dbc.version")}"
-}

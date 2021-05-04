@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 8
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 256
+    length: 281
+    placeholder_text: Flux.error(new ToDoException());
+- name: test/MultipleSourcesTask8Tests.java
+  visible: false
+- name: build.gradle
+  visible: false

@@ -1,0 +1,15 @@
+type: edu
+custom_name: Task 4
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 305
+    length: 76
+    placeholder_text: Flux.error(new ToDoException());
+- name: test/BackpressureTask4Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: src/StatisticSnapshot.java
+  visible: true

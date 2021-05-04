@@ -1,0 +1,19 @@
+type: edu
+custom_name: Tricky Network Interaction
+files:
+- name: test/CPTask4Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: src/OrderedByteBuffer.java
+  visible: true
+- name: src/DataUploaderService.java
+  visible: true
+  placeholders:
+  - offset: 896
+    length: 978
+    placeholder_text: Mono.error(new ToDoException());
+- name: src/HttpClient.java
+  visible: true
+- name: test/TrickyHttpClient.java
+  visible: false

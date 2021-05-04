@@ -1,0 +1,26 @@
+type: edu
+custom_name: Distributed Transactions
+files:
+- name: test/CPTask5Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: src/Connection.java
+  visible: true
+- name: src/Result.java
+  visible: true
+- name: src/ErrorResult.java
+  visible: true
+- name: src/SuccessResult.java
+  visible: true
+- name: src/DatabasesIntegration.java
+  visible: true
+  placeholders:
+  - offset: 709
+    length: 1860
+    placeholder_text: Mono.error(new ToDoException());
+  - offset: 2678
+    length: 738
+    placeholder_text: Mono.error(new ToDoException());
+- name: src/DatabaseApi.java
+  visible: true

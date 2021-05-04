@@ -1,4 +1,0 @@
-dependencies {
-  compile 'io.projectreactor.addons:reactor-extra'
-  compile 'io.projectreactor:reactor-core'
-}

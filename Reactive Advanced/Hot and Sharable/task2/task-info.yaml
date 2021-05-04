@@ -1,0 +1,16 @@
+type: edu
+custom_name: Task 2
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 245
+    length: 55
+    placeholder_text: Flux.error(new ToDoException()); // With Operator
+  - offset: 407
+    length: 52
+    placeholder_text: Flux.error(new ToDoException()); // With Processor
+- name: test/HnSTask2Tests.java
+  visible: false
+- name: build.gradle
+  visible: false

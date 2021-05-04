@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 3
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 241
+    length: 51
+    placeholder_text: Flux.error(new ToDoException());
+- name: test/HnSTask3Tests.java
+  visible: false
+- name: build.gradle
+  visible: false

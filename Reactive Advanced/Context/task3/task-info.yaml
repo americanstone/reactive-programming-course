@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 3
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 293
+    length: 162
+    placeholder_text: Flux.from(sourceA).mergeWith(sourceB);
+- name: test/ContextTask3Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
