@@ -11,7 +11,7 @@ that case, if our application creates more Threads than available connections in
   
   As great developers, we have to tackle that noisy issue. To avoid that insufficient
    wasting we have to provide adaptation of `BlockingPaymentsHistoryJpaRepository
-   ` using `ReactivePaymentsHistoryJpaRepositoryAdapter` and custom Scheduler service.
+   ` using `ReactivePaymentsHistoryJpaRepositoryAdapter` in combination with `Scheduler` or custom `ExecutorService`.
 
-In turn, you have to care about connections-pool limitations so your application will
+In turn, you have to care about connections-pool limitations, so your application will
  not overwhelm it by redundant calls.

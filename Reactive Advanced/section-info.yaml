@@ -3,8 +3,8 @@ content:
 - Multiple Sources
 - Multithreading Operators
 - Control Backpressure
+- Context
 - Resilience
 - Hot and Sharable
-- Context
 - Testing
 - Debug | Log | Meter

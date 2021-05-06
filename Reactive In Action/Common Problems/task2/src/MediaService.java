@@ -13,6 +13,6 @@ public class MediaService {
 		return Flux.fromIterable(catalogue.list())
 		           .map(s -> s.searchOne(videoName))
 		           .collectList()
-		           .flatMap(Mono::first);
+		           .flatMap(Mono::firstWithSignal);
 	}
 }
