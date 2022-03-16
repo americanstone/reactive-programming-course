@@ -34,7 +34,7 @@ public class CPTask2Tests {
 		                    .count();
 
 		Assertions.assertThat(count)
-		          .isEqualTo(servers.size() - 1);
+		          .isBetween(servers.size() - 1L, ((long) servers.size()));
 	}
 
 	static final class MockableServer extends Server {

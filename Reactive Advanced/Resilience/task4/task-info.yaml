@@ -1,13 +1,13 @@
 type: edu
 custom_name: Task 4
 files:
+- name: build.gradle
+  visible: false
+- name: test/ResilienceTask4Tests.java
+  visible: false
 - name: src/Task.java
   visible: true
   placeholders:
   - offset: 318
     length: 86
     placeholder_text: Mono.error(new ToDoException());
-- name: test/ResilienceTask4Tests.java
-  visible: false
-- name: build.gradle
-  visible: false

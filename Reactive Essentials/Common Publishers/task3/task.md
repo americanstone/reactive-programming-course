@@ -1,5 +1,5 @@
 Generate a `Flux` from array
    
 <div class="hint">
-  Используйте Flux.fromArray
+  Use <code>Flux.fromArray</code>
 </div>

@@ -1,10 +1,6 @@
 type: edu
 custom_name: Application
 files:
-- name: resources/ui/main.js
-  visible: true
-- name: resources/ui/index.html
-  visible: true
 - name: resources/ui/favicon.ico
   visible: true
 - name: build.gradle
@@ -23,6 +19,14 @@ files:
   visible: true
 - name: src/utils/NettyUtils.java
   visible: true
+- name: resources/logback.xml
+  visible: true
+- name: resources/ui/main.js
+  visible: true
+- name: resources/ui/index.html
+  visible: true
+- name: test/CryptoApplicationTests.java
+  visible: false
 - name: src/ApplicationRunner.java
   visible: true
   placeholders:
@@ -35,7 +39,3 @@ files:
   - offset: 3944
     length: 29
     placeholder_text: ; // TODO Enable Backpressure
-- name: resources/logback.xml
-  visible: true
-- name: test/CryptoApplicationTests.java
-  visible: false

@@ -1,11 +1,17 @@
 type: edu
 custom_name: Task 5
 files:
+- name: build.gradle
+  visible: false
+- name: task.ru.html
+  visible: false
+- name: test/MultipleSourcesTask5Tests.java
+  visible: false
 - name: src/Task.java
   visible: true
   placeholders:
   - offset: 358
-    length: 97
+    length: 96
     placeholder_text: Flux.error(new ToDoException());
   - offset: 561
     length: 32
@@ -13,9 +19,3 @@ files:
   - offset: 738
     length: 340
     placeholder_text: Flux.error(new ToDoException());
-- name: test/MultipleSourcesTask5Tests.java
-  visible: false
-- name: build.gradle
-  visible: false
-- name: task.ru.html
-  visible: false

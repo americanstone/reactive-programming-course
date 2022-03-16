@@ -9,8 +9,8 @@ public class Task {
 			Publisher<String> sourceB,
 			Context contextB) {
 		return Flux.from(sourceA)
-		           .subscriberContext(contextA)
+		           .contextWrite(contextA)
 		           .mergeWith(Flux.from(sourceB)
-		                          .subscriberContext(contextB));
+		                          .contextWrite(contextB));
 	}
 }

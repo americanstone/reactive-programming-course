@@ -8,6 +8,6 @@ public class Task {
 
 	public static Publisher<String> subscribeOnSingleThreadScheduler(Callable<String> blockingCall) {
 		return Mono.fromCallable(blockingCall)
-		           .subscribeOn(Schedulers.single());
+		           .subscribeOn(Schedulers.boundedElastic());
 	}
 }

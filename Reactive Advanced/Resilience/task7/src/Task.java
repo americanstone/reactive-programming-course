@@ -15,8 +15,11 @@ public class Task {
 				.handle(new BiConsumer<Integer, SynchronousSink<Integer>>() {
 					@Override
 					public void accept(Integer integer, SynchronousSink<Integer> integerSynchronousSink) {
-						if (integer != 0) {
-							integerSynchronousSink.next(mapping.apply(integer));
+						try {
+							final Integer mappingResult = mapping.apply(integer);
+							integerSynchronousSink.next(mappingResult);
+						} catch (Exception e) {
+							// ignore
 						}
 					}
 				});

@@ -5,5 +5,5 @@
   3) Close opened resource on terminal operation
   
 <div class="hint">
-    Используйте <code>Flux.using</code> для решения задачи
+    Use <code>Flux.using</code>
 </div>

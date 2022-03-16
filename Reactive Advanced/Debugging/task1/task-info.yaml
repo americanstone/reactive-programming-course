@@ -1,8 +1,6 @@
 type: edu
 custom_name: Task 1
 files:
-- name: build.gradle
-  visible: false
 - name: src/Task.java
   visible: true
   placeholders:
@@ -21,5 +19,7 @@ files:
   - offset: 855
     length: 223
     placeholder_text: // Add BlockHound Integration
+- name: build.gradle
+  visible: false
 - name: test/DLMTask1Tests.java
   visible: false

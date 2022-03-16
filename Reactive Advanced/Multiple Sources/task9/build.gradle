@@ -11,3 +11,7 @@ sourceSets {
     java.srcDir 'test'
   }
 }
+
+processResources {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

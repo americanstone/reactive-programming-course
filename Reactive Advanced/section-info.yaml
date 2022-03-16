@@ -6,5 +6,4 @@ content:
 - Context
 - Resilience
 - Hot and Sharable
-- Testing
-- Debug | Log | Meter
+- Debugging

@@ -1,15 +1,15 @@
 type: edu
 custom_name: Task 10
 files:
-- name: src/Task.java
-  visible: true
-  placeholders:
-  - offset: 128
-    length: 17
-    placeholder_text: null;
 - name: test/CommonOperatorsTask10Tests.java
   visible: false
 - name: build.gradle
   visible: false
 - name: task.ru.md
   visible: false
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 128
+    length: 17
+    placeholder_text: null;

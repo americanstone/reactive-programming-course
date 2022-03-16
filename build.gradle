@@ -32,8 +32,8 @@ subprojects {
 
     ext {
         junitBomVersion='5.7.1'
-        reactorBomVersion='2020.0.6'
-        r2dbcBomVersion='Arabba-SR9'
+        reactorBomVersion='2020.0.16'
+        r2dbcBomVersion='Arabba-SR10'
         micrometerBomVersion='1.6.6'
 
         logbackVersion='1.2.3'

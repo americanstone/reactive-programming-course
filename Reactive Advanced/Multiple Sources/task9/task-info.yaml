@@ -1,15 +1,15 @@
 type: edu
 custom_name: Task 9
 files:
-- name: src/Task.java
-  visible: true
-  placeholders:
-  - offset: 255
-    length: 97
-    placeholder_text: Flux.error(new ToDoException());
 - name: test/MultipleSourcesTask9Tests.java
   visible: false
 - name: build.gradle
   visible: false
 - name: resources/testfile.txt
   visible: false
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 255
+    length: 97
+    placeholder_text: Flux.error(new ToDoException());

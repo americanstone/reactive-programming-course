@@ -11,11 +11,11 @@ files:
   visible: true
 - name: src/Payment.java
   visible: true
-- name: src/PaymentsHistoryJpaRepository.java
+- name: src/BlockingPaymentsHistoryJpaRepository.java
   visible: true
 - name: src/PaymentsHistoryReactiveJpaRepository.java
   visible: true
-- name: src/BlockingPaymentsHistoryJpaRepository.java
+- name: src/PaymentsHistoryJpaRepository.java
   visible: true
 - name: src/ReactivePaymentsHistoryJpaRepositoryAdapter.java
   visible: true
@@ -24,5 +24,5 @@ files:
     length: 238
     placeholder_text: // use ExecutorService or Scheduler to offload blocking calls
   - offset: 923
-    length: 122
+    length: 123
     placeholder_text: Flux.error(new ToDoException());
