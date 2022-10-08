@@ -4,11 +4,11 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 245
+  - offset: 373
     length: 55
     placeholder_text: Flux.error(new ToDoException()); // With Operator
-  - offset: 407
-    length: 52
+  - offset: 599
+    length: 540
     placeholder_text: Flux.error(new ToDoException()); // With Processor
 - name: test/HnSTask2Tests.java
   visible: false

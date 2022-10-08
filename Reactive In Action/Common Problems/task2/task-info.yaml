@@ -1,19 +1,19 @@
 type: edu
 custom_name: Distributed Media Service
 files:
-- name: test/CPTask2Tests.java
-  visible: false
 - name: build.gradle
   visible: false
-- name: src/MediaService.java
-  visible: true
-  placeholders:
-  - offset: 281
-    length: 165
-    placeholder_text: Mono.error(new ToDoException());
 - name: src/Server.java
   visible: true
 - name: src/Video.java
   visible: true
 - name: src/ServersCatalogue.java
   visible: true
+- name: src/MediaService.java
+  visible: true
+  placeholders:
+  - offset: 281
+    length: 165
+    placeholder_text: Mono.error(new ToDoException());
+- name: test/CPTask2Tests.java
+  visible: false

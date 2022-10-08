@@ -26,7 +26,7 @@ public class DefaultPriceService implements PriceService {
 		sharedStream = cryptoService.eventsStream()
 		                            .log("Incoming event: {}", Level.INFO)
 		                            .transform(this::selectOnlyPriceUpdateEvents)
-		                            .transform(this::currentPrice)
+		                            .transform(this::tranformToPriceMessageDTO)
 		                            .log("Price event: {}", Level.INFO);
 	}
 
@@ -51,7 +51,7 @@ public class DefaultPriceService implements PriceService {
 	}
 
 	// Visible for testing
-	Flux<MessageDTO<Float>> currentPrice(Flux<Map<String, Object>> input) {
+	Flux<MessageDTO<Float>> tranformToPriceMessageDTO(Flux<Map<String, Object>> input) {
 		// TODO map to Statistic message using MessageMapper.mapToPriceMessage
 
 		return input.map(MessageMapper::mapToPriceMessage);
@@ -88,8 +88,8 @@ public class DefaultPriceService implements PriceService {
 	private Mono<MessageDTO<Float>> averageProcessingLogic(Flux<MessageDTO<Float>> flux,
             String currency) {
 		return flux.map(MessageDTO::getData)
-                   .reduce(Sum.empty(), Sum::add)
-                   .map(Sum::avg)
-                   .map(avg -> MessageDTO.avg(avg, currency, "LocalMarketAvg"));
+				   .reduce(Sum.empty(), Sum::add)
+				   .map(Sum::avg)
+				   .map(avg -> MessageDTO.avg(avg, currency, "LocalMarketAvg"));
 	}
 }

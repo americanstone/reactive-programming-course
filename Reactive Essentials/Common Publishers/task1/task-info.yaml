@@ -10,6 +10,10 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 115
-    length: 18
-    placeholder_text: Flux.error(new ToDoException());
+  - offset: 124
+    length: 61
+    placeholder_text: Flux<Integer> createSequence() {  
+                        List<Integer> sequence = new ArrayList<>();
+                        for (int i = 0; i < 20; i++) {
+                          sequence.add(i);
+                        }

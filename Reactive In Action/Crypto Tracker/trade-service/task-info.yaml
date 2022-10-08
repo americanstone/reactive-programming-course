@@ -1,6 +1,14 @@
 type: edu
 custom_name: Trading Service
 files:
+- name: src/repository/TradeRepository.java
+  visible: true
+- name: src/domain/Trade.java
+  visible: true
+- name: src/domain/utils/DomainMapper.java
+  visible: true
+- name: build.gradle
+  visible: false
 - name: src/service/impl/DefaultTradeService.java
   visible: true
   placeholders:
@@ -19,17 +27,9 @@ files:
   - offset: 4084
     length: 209
     placeholder_text: Mono.never();
-- name: src/repository/TradeRepository.java
-  visible: true
+- name: test/service/impl/TradeServiceTests.java
+  visible: false
 - name: src/repository/impl/MongoTradeRepository.java
-  visible: true
-- name: src/domain/Trade.java
-  visible: true
-- name: src/domain/utils/DomainMapper.java
   visible: true
 - name: src/repository/impl/H2TradeRepository.java
   visible: true
-- name: build.gradle
-  visible: false
-- name: test/service/impl/TradeServiceTests.java
-  visible: false
