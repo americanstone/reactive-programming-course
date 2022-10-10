@@ -11,9 +11,7 @@ files:
   visible: true
   placeholders:
   - offset: 124
-    length: 61
-    placeholder_text: Flux<Integer> createSequence() {  
-                        List<Integer> sequence = new ArrayList<>();
-                        for (int i = 0; i < 20; i++) {
-                          sequence.add(i);
-                        }
+    length: 60
+    placeholder_text: "Iterable<Integer> createSequence() {  \n      List<Integer>\
+      \ sequence = new ArrayList<>();\n      for (int i = 0; i < 20; i++) {\n    \
+      \     sequence.add(i);\n      }\n      return sequence;"

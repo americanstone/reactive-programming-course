@@ -20,9 +20,13 @@ public class CommonPublishersTask1Tests {
 		});
 
 		try {
-			Flux<Integer> sequence = Task.createSequence();
+			Object sequence = Task.createSequence();
 
-			sequence.subscribe();
+			if (sequence instanceof Flux) {
+				((Flux<?>) sequence).subscribe();
+			} else {
+				Assertions.fail("Unexpected implementation");
+			}
 		}
 		finally {
 			Hooks.resetOnEachOperator();
@@ -36,24 +40,28 @@ public class CommonPublishersTask1Tests {
 
 	@Test
 	public void testResultIsCorrect() {
-		Flux<Integer> sequence = Task.createSequence();
+		Object sequence = Task.createSequence();
 
-		StepVerifier.create(sequence)
-		            .recordWith(ArrayList::new)
-		            .expectNextCount(20)
-		            .consumeRecordedWith(r -> {
-			            Assertions.assertThat(r)
-			                      .hasSize(20);
-			            Iterator<Integer> iterator = r.iterator();
-			            for (int i = 0; i < 20; i++) {
-				            Integer next = iterator.next();
-				            Assertions.assertThat(next)
-				                      .as("Expected sequence of elements from 0 to 20 but got element [%d] out of order",
-						                      next)
-				                      .isEqualTo(i);
-			            }
-		            })
-		            .expectComplete()
-		            .verify(Duration.ofMillis(100));
+		if (sequence instanceof Flux) {
+			StepVerifier.create(((Flux<Integer>) sequence))
+					.recordWith(ArrayList::new)
+					.expectNextCount(20)
+					.consumeRecordedWith(r -> {
+						Assertions.assertThat(r)
+								.hasSize(20);
+						Iterator<Integer> iterator = r.iterator();
+						for (int i = 0; i < 20; i++) {
+							Integer next = iterator.next();
+							Assertions.assertThat(next)
+									.as("Expected sequence of elements from 0 to 20 but got element [%d] out of order",
+											next)
+									.isEqualTo(i);
+						}
+					})
+					.expectComplete()
+					.verify(Duration.ofMillis(100));
+		} else {
+			Assertions.fail("Unexpected implementation");
+		}
 	}
 }
