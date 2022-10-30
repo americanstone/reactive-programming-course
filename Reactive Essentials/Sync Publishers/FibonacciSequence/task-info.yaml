@@ -1,15 +1,15 @@
 type: edu
-custom_name: Task 2
+custom_name: Task 8
 files:
-- name: src/Task.java
-  visible: true
-  placeholders:
-  - offset: 144
-    length: 19
-    placeholder_text: Flux.error(new ToDoException());
-- name: test/CommonPublishersTask2Tests.java
+- name: test/CommonPublishersTask10Tests.java
   visible: false
 - name: build.gradle
   visible: false
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 112
+    length: 270
+    placeholder_text: Flux.error(new ToDoException());
 - name: task.ru.md
   visible: false

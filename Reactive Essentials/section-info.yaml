@@ -1,5 +1,6 @@
 custom_name: Reactive Essentials
 content:
-- Common Publishers
+- Sync Publishers
+- Async Publishers
 - Common Operators
 - Testing

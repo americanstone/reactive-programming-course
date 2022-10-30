@@ -1,0 +1,17 @@
+type: edu
+custom_name: Task 2
+files:
+- name: src/Task.java
+  visible: true
+  placeholders:
+  - offset: 111
+    length: 101
+    placeholder_text: "String generateRandomUUID() {  \n      return uuidGenerator.secureUUID();"
+- name: test/CommonPublishersTask2Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: false
+- name: src/UUIDGenerator.java
+  visible: true

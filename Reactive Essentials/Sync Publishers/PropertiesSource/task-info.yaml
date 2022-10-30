@@ -1,0 +1,22 @@
+type: edu
+custom_name: Task 3
+files:
+- name: test/CommonPublishersTask3Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: true
+- name: src/Properties.java
+  visible: true
+- name: src/Property.java
+  visible: true
+- name: src/PropertiesSourceTask.java
+  visible: true
+  placeholders:
+  - offset: 119
+    length: 17
+    placeholder_text: Iterable<Property<?>>
+  - offset: 165
+    length: 55
+    placeholder_text: settings.asList();

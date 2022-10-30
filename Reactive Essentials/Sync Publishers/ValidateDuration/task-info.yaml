@@ -1,0 +1,18 @@
+type: edu
+custom_name: Task 6
+files:
+- name: test/CommonPublishersTask6Tests.java
+  visible: false
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: false
+- name: src/ValidationTask.java
+  visible: true
+  placeholders:
+  - offset: 111
+    length: 10
+    placeholder_text: boolean
+  - offset: 154
+    length: 169
+    placeholder_text: return !duration.isNegative() && !duration.isZero();

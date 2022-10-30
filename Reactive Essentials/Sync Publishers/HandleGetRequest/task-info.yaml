@@ -1,0 +1,25 @@
+type: edu
+custom_name: Task 7
+files:
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: false
+- name: src/RequestEntity.java
+  visible: true
+- name: src/HttpMethod.java
+  visible: true
+- name: src/ReactiveRandom.java
+  visible: true
+- name: src/HandleGetRequestTask.java
+  visible: true
+  placeholders:
+  - offset: 290
+    length: 13
+    placeholder_text: int
+  - offset: 357
+    length: 126
+    placeholder_text: "if (request.method != HttpMethod.GET) {\n\t\t\tthrow UNSUPPORTED_HTTP_METHOD;\n\t\t
+      }\n\n\t\treturn reactiveRandom.nextInt().block();"
+- name: test/HandleGetRequestTaskTests.java
+  visible: false

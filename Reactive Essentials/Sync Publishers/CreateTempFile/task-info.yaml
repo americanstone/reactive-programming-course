@@ -1,0 +1,20 @@
+type: edu
+custom_name: Task 4
+files:
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: false
+- name: test/CommonPublishersTask5Tests.java
+  visible: false
+- name: src/CreateTempFileTask.java
+  visible: true
+  placeholders:
+  - offset: 174
+    length: 10
+    placeholder_text: File
+  - offset: 234
+    length: 68
+    placeholder_text: "try { \n \t\t\t return File.createTempFile(prefix, suffix);\n\
+      \ \t\t} catch(IOException e) { \n \t\t\t throw new UncheckedIOException(e);\
+      \ \n \t\t} "
