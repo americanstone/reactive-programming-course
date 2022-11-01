@@ -1,6 +1,6 @@
 custom_name: 'How To: Generate an async Publisher'
 content:
 - DelayExecution
-- task2
-- task3
-- task4
+- SchedulePeriodic
+- FutureHttpRequest
+- ListenableHttpRequest
