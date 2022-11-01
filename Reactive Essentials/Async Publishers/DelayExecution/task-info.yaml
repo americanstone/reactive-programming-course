@@ -1,0 +1,19 @@
+type: edu
+custom_name: Task 1
+files:
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: false
+- name: src/DelayExecutionTask.java
+  visible: true
+  placeholders:
+  - offset: 201
+    length: 10
+    placeholder_text: Void
+  - offset: 259
+    length: 60
+    placeholder_text: "try {\n\t\t\tThread.sleep(pauseDurationInMillis);\n\t\t} catch\
+      \ (InterruptedException e) {\n\t\t\tthrow new RuntimeException(e);\n\t\t}"
+- name: test/DelayExecutionTaskTests.java
+  visible: false

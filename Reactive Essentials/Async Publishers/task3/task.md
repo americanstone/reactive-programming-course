@@ -1,5 +1,5 @@
-Generate a `Flux` from array
+Convert given API using Project Reactor reactive types 
    
 <div class="hint">
-  Use <code>Flux.fromArray</code>
+  Use <code>Mono.fromFuture</code>
 </div>

@@ -1,15 +1,19 @@
 type: edu
 custom_name: Task 4
 files:
-- name: src/Task.java
-  visible: true
-  placeholders:
-  - offset: 168
-    length: 24
-    placeholder_text: Flux.error(new ToDoException());
-- name: test/CommonPublishersTask4Tests.java
-  visible: false
 - name: build.gradle
   visible: false
 - name: task.ru.md
+  visible: false
+- name: src/ListenableFuture.java
+  visible: true
+- name: src/AsyncHttpClient.java
+  visible: true
+- name: src/ListenableHttpGetRequestTask.java
+  visible: true
+  placeholders:
+  - offset: 243
+    length: 339
+    placeholder_text: Flux.error(new ToDoException());
+- name: test/ListenableHttpGetRequestTaskTests.java
   visible: false

@@ -1,15 +1,21 @@
 type: edu
 custom_name: Task 3
 files:
-- name: src/Task.java
-  visible: true
-  placeholders:
-  - offset: 128
-    length: 21
-    placeholder_text: Flux.error(new ToDoException());
-- name: test/CommonPublishersTask3Tests.java
-  visible: false
 - name: build.gradle
   visible: false
 - name: task.ru.md
   visible: true
+- name: src/AsyncRestTemplate.java
+  visible: true
+- name: test/AsyncHttpGetRequestTaskTests.java
+  visible: false
+- name: src/FutureHttpGetRequestTask.java
+  visible: true
+  placeholders:
+  - offset: 139
+    length: 12
+    placeholder_text: CompletableFuture<String>
+  - offset: 174
+    length: 114
+    placeholder_text: asyncRestTemplate.getForObject("https://baconipsum.com/api/?type=meat-and-filler",
+      String.class);
