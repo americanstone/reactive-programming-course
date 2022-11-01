@@ -6,10 +6,10 @@ files:
   placeholders:
   - offset: 477
     length: 441
-    placeholder_text: // TODO Check Success Case;
+    placeholder_text: throw new ToDoException()); // TODO Check Success Case;
   - offset: 1082
     length: 372
-    placeholder_text: // TODO Check Failure Case;
+    placeholder_text: throw new ToDoException()); // TODO Check Failure Case;
 - name: build.gradle
   visible: false
 - name: test/TestingTask3Tests.java
