@@ -10,5 +10,5 @@ files:
   placeholders:
   - offset: 192
     length: 175
-    placeholder_text: throw new ToDoException()); // use StepVerifier to perform
+    placeholder_text: throw new ToDoException(); // use StepVerifier to perform
       testing

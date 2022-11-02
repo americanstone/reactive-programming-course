@@ -1,0 +1,21 @@
+type: edu
+custom_name: Price Service
+files:
+- name: build.gradle
+  visible: false
+- name: src/service/impl/DefaultPriceService.java
+  visible: true
+  placeholders:
+  - offset: 1312
+    length: 102
+    placeholder_text: "/* TODO: add filtering */ \nreturn Flux.never();"
+  - offset: 1507
+    length: 51
+    placeholder_text: "/* TODO: add mapping to price message. Use MessageMpper */\
+      \ \nreturn Flux.never();"
+  - offset: 1681
+    length: 711
+    placeholder_text: "/* TODO: calcualte average price.  Use window(Duration) + groupBy\
+      \ */\n\n\treturn Flux.never();\n}"
+- name: test/service/impl/PriceServiceTests.java
+  visible: false
