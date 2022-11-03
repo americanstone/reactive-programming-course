@@ -8,6 +8,6 @@ files:
     length: 152
     placeholder_text: Flux.from(sourceA).mergeWith(sourceB);
 - name: test/ContextTask3Tests.java
-  visible: false
+  visible: true
 - name: build.gradle
   visible: false

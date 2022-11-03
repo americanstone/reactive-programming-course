@@ -1,7 +1,5 @@
 custom_name: Reactive In Action
 content:
-- task1
-- task2
-- task3
+- Handling Blocking DB Access
 - task4
 - task5
