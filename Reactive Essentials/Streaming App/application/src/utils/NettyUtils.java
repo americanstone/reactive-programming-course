@@ -1,4 +1,4 @@
-package com.example.part_10.utils;
+package utils;
 
 import java.nio.charset.StandardCharsets;
 import java.util.function.Function;

@@ -1,0 +1,13 @@
+type: edu
+custom_name: Distributed Media Service
+files:
+- name: build.gradle
+  visible: false
+  placeholders:
+  - offset: 290
+    length: 146
+    placeholder_text: Flux.error(new ToDoException());
+- name: src/service/utils/MessageMapper.java
+  visible: true
+- name: src/service/utils/Sum.java
+  visible: true
