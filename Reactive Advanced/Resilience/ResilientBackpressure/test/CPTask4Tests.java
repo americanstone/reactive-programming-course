@@ -14,18 +14,17 @@ public class CPTask4Tests {
 	public void uploadTest() {
 		TrickyHttpClient client = new TrickyHttpClient();
 		DataUploaderService service = new DataUploaderService(client);
-		StepVerifier.withVirtualTime(() -> service.upload(Flux.range(0, 1000)
-		                                                      .map(i -> new OrderedByteBuffer(
-				                                                      i,
-				                                                      ByteBuffer.allocate(
-						                                                      i)))
-		                                                      .window(100)
-		                                                      .delayElements(Duration.ofMillis(
-				                                                      1500))
-		                                                      .flatMap(Function.identity())))
-		            .expectSubscription()
-		            .thenAwait(Duration.ofSeconds(1000))
-		            .verifyComplete();
+		StepVerifier.withVirtualTime(() ->
+				Flux.range(0, 1000)
+					.map(i -> new OrderedByteBuffer(i, ByteBuffer.allocate(i)))
+					.window(100)
+					.delayElements(Duration.ofMillis(1500))
+					.concatMap(Function.identity())
+					.as(service::upload)
+				)
+				.expectSubscription()
+				.thenAwait(Duration.ofSeconds(1000))
+				.verifyComplete();
 
 		verifyOrdered(client);
 		verifyTimeout(client);

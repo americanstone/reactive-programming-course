@@ -1,6 +1,13 @@
 import java.nio.ByteBuffer;
 
 public class OrderedByteBuffer {
+	@Override
+	public String toString() {
+		return "OrderedByteBuffer{" +
+				"writePosition=" + writePosition +
+				", data=" + data +
+				'}';
+	}
 
 	private final int writePosition;
 	private final ByteBuffer data;
