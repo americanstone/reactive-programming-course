@@ -16,6 +16,6 @@ files:
   - offset: 1681
     length: 711
     placeholder_text: "/* TODO: calcualte average price.  Use window(Duration) + groupBy\
-      \ */\n\n\treturn Flux.never();\n}"
+      \ */\n\n\tFlux.never();\n}"
 - name: test/service/impl/PriceServiceTests.java
   visible: false
