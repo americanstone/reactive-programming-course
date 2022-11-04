@@ -66,9 +66,9 @@ subprojects {
 
     dependencies {
         // BOMs defenition
-        implementation platform('io.projectreactor:reactor-bom:' + reactorBomVersion)
         implementation platform('io.r2dbc:r2dbc-bom:' + r2dbcBomVersion)
         implementation platform('io.micrometer:micrometer-bom:' + micrometerBomVersion)
+        implementation platform('io.projectreactor:reactor-bom:' + reactorBomVersion)
 
         implementation 'ch.qos.logback:logback-core:' + logbackVersion
         implementation 'ch.qos.logback:logback-classic:' + logbackVersion
