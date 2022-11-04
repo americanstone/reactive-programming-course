@@ -1,0 +1,17 @@
+type: edu
+custom_name: Parallelize By Tasks
+files:
+- name: src/DecoupleDeserializationTask.java
+  visible: true
+  placeholders:
+  - offset: 294
+    length: 81
+    placeholder_text: Flux.error(new ToDoException());
+- name: build.gradle
+  visible: false
+- name: src/Deserializer.java
+  visible: true
+- name: src/Event.java
+  visible: true
+- name: test/DecoupleDeserializationTaskTests.java
+  visible: true

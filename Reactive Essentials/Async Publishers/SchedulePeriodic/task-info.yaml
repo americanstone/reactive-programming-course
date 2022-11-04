@@ -17,4 +17,4 @@ files:
       \t\t\t} catch (InterruptedException e) {\n\t\t\t\tthrow new RuntimeException(e);\n\
       \t\t\t}\n\t\t}"
 - name: test/SchedulePeriodicTaskTests.java
-  visible: false
+  visible: true

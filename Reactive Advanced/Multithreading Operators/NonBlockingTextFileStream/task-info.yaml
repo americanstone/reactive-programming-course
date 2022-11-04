@@ -1,0 +1,16 @@
+type: edu
+custom_name: Task 5
+files:
+- name: build.gradle
+  visible: false
+- name: resources/testfile.txt
+  visible: false
+- name: src/NonBlockingTextFileStreamTask.java
+  visible: true
+  placeholders:
+  - offset: 266
+    length: 137
+    placeholder_text: "return Flux.using(() -> files.lines(Paths.get(filename)), Flux::fromStream,\
+      \ Stream::close);"
+- name: test/NonBlockingTextFileStreamTaskTests.java
+  visible: true

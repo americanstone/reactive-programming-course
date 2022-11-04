@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 1
+files:
+- name: test/TestingTask1Tests.java
+  visible: true
+- name: build.gradle
+  visible: false
+- name: src/CheckFluxTask.java
+  visible: true
+  placeholders:
+  - offset: 201
+    length: 175
+    placeholder_text: throw new ToDoException(); // use StepVerifier to perform testing

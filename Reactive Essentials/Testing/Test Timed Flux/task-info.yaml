@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 2
+files:
+- name: build.gradle
+  visible: false
+- name: test/TestingTask2Tests.java
+  visible: false
+- name: src/TestTimedFluxTask.java
+  visible: true
+  placeholders:
+  - offset: 416
+    length: 391
+    placeholder_text: throw new ToDoException();

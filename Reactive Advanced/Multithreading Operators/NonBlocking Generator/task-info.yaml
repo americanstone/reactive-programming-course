@@ -1,0 +1,13 @@
+type: edu
+custom_name: Task 2
+files:
+- name: build.gradle
+  visible: false
+- name: src/NonBlockingGenerateUUIDTask.java
+  visible: true
+  placeholders:
+  - offset: 221
+    length: 102
+    placeholder_text: Mono.defer(() -> Mono.just(uuidGenerator.secureUUID()));
+- name: test/NonBlockingGenerateUUIDTaskTests.java
+  visible: false

@@ -8,7 +8,7 @@ files:
 - name: src/AsyncRestTemplate.java
   visible: true
 - name: test/AsyncHttpGetRequestTaskTests.java
-  visible: false
+  visible: true
 - name: src/FutureHttpGetRequestTask.java
   visible: true
   placeholders:

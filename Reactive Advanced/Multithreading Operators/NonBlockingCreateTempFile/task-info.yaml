@@ -1,0 +1,18 @@
+type: edu
+custom_name: Task 4
+files:
+- name: build.gradle
+  visible: false
+- name: task.ru.md
+  visible: false
+- name: src/NonBlockingTempFileTask.java
+  visible: true
+  placeholders:
+  - offset: 239
+    length: 115
+    placeholder_text: "return Mono.fromCallable(() -> File.createTempFile(prefix,\
+      \ suffix));"
+- name: src/Files.java
+  visible: true
+- name: test/NonBlockingTempFileTaskTests.java
+  visible: true

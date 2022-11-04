@@ -2,7 +2,7 @@ type: edu
 custom_name: Task 6
 files:
 - name: test/CommonPublishersTask6Tests.java
-  visible: false
+  visible: true
 - name: build.gradle
   visible: false
 - name: task.ru.md

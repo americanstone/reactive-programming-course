@@ -6,7 +6,7 @@ files:
 - name: task.ru.md
   visible: false
 - name: test/CommonPublishersTask5Tests.java
-  visible: false
+  visible: true
 - name: src/CreateTempFileTask.java
   visible: true
   placeholders:

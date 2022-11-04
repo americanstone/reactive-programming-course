@@ -6,7 +6,7 @@ files:
 - name: task.ru.md
   visible: false
 - name: test/CommonPublishersTask1Tests.java
-  visible: false
+  visible: true
 - name: src/CreateSequenceTask.java
   visible: true
   placeholders:
