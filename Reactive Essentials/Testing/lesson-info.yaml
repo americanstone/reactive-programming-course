@@ -1,1 +1,5 @@
-custom_name: 'How To: Test'
+custom_name: "How To: Test"
+content:
+- Check Flux
+- Test Timed Flux
+- Test Publisher
