@@ -17,7 +17,7 @@ class CryptoCompareClient {
     private static final Logger logger = LoggerFactory.getLogger("external-trading-service");
 
     static Flux<Map<String, Object>> connect(Flux<String> input, Collection<MessageUnpacker> unpackers) {
-        return Flux.defer(() -> Flux.create(sink -> {
+        return Flux.create(sink -> {
             Socket socket;
 
             try {
@@ -63,7 +63,7 @@ class CryptoCompareClient {
 
             sink.onCancel(closeSocket::run);
             socket.connect();
-        }, FluxSink.OverflowStrategy.ERROR));
+        }, FluxSink.OverflowStrategy.ERROR);
     }
 
 }

@@ -63,48 +63,25 @@ public class DefaultTradeService implements TradeService {
 			Flux<Trade> input,
 			TradeRepository tradeRepository1,
 			TradeRepository tradeRepository2) {
-		Sinks.Many<Long> delayNotifier =
-				Sinks.unsafe()
-				     .many()
-				     .multicast()
-				     .onBackpressureBuffer(1, false);
-		Sinks.Many<Long> intervalNotifier =
-				Sinks.unsafe()
-				     .many()
-				     .multicast()
-				     .onBackpressureBuffer(1, false);
-
-		delayNotifier.emitNext(0L, FAIL_FAST);
-		intervalNotifier.emitNext(0L, FAIL_FAST);
 
 		return input
-			.bufferWhen(
-				Flux.interval(Duration.ZERO, Duration.ofSeconds(1))
-				    .onBackpressureDrop()
-				    .concatMap(v -> Mono.just(v).delayUntil(__ -> intervalNotifier.asFlux().next()), 1),
-				e -> delayNotifier.asFlux().zipWith(Mono.delay(Duration.ofMillis(1000)))
-			)
-			.doOnNext(__ -> logger.warn(".buffer(Duration.ofMillis(100)) onNext(" + __ + ")"))
-			.concatMap(trades -> {
+			.windowTimeout(Integer.MAX_VALUE, Duration.ofSeconds(1), true)
+			.log("window")
+			.concatMap(tradesFlux -> tradesFlux.collectList().log("batch").flatMap(trades -> {
 				if (trades.isEmpty()) {
-					return Mono
-						.empty()
-						.doFirst(() -> intervalNotifier.emitNext(0L, FAIL_FAST))
-						.then(Mono.fromRunnable(() -> delayNotifier.emitNext(0L, FAIL_FAST)));
+					return Mono.empty();
 				}
 
 				return Mono
-					.zip(
+					.when(
 							saveIntoMongoDatabase(tradeRepository1, trades),
 							saveIntoRelationalDatabase(tradeRepository2, trades)
-					)
-					.doFirst(() -> intervalNotifier.emitNext(0L, FAIL_FAST))
-					.then(Mono.fromRunnable(() -> delayNotifier.emitNext(0L, FAIL_FAST)));
-			})
+					);
+			}), 0)
 			.then();
 	}
 
-	Mono<Integer> saveIntoMongoDatabase(TradeRepository tradeRepository1, List<Trade> trades) {
+	Mono<Void> saveIntoMongoDatabase(TradeRepository tradeRepository1, List<Trade> trades) {
 		return tradeRepository1
 				.saveAll(trades)
 				.timeout(Duration.ofSeconds(1))
@@ -117,17 +94,15 @@ public class DefaultTradeService implements TradeService {
 
 					                return true;
 				                }))
-				.onErrorResume(MongoException.class, t -> Mono.empty())
-				.thenReturn(1);
+				.onErrorResume(MongoException.class, t -> Mono.empty());
 	}
 
-	Mono<Integer> saveIntoRelationalDatabase(TradeRepository tradeRepository2, List<Trade> trades) {
+	Mono<Void> saveIntoRelationalDatabase(TradeRepository tradeRepository2, List<Trade> trades) {
 		return tradeRepository2
 				.saveAll(trades)
 				.timeout(Duration.ofSeconds(1))
 				.retryWhen(Retry.backoff(100, Duration.ofMillis(500))
-				                .maxBackoff(Duration.ofMillis(5000)))
-				.thenReturn(1);
+				                .maxBackoff(Duration.ofMillis(5000)));
 	}
 
 }

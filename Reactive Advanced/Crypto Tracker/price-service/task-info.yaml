@@ -5,15 +5,5 @@ files:
   visible: false
 - name: src/service/impl/DefaultPriceService.java
   visible: true
-  placeholders:
-  - offset: 1825
-    length: 95
-    placeholder_text: Flux.never();
-  - offset: 2118
-    length: 44
-    placeholder_text: Flux.never();
-  - offset: 2873
-    length: 704
-    placeholder_text: Flux.never();
 - name: test/service/impl/PriceServiceTests.java
   visible: false

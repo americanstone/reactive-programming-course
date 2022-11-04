@@ -37,36 +37,15 @@ public class DefaultPriceService implements PriceService {
 		));
 	}
 
-	// FIXME:
-	// 1) JUST FOR WARM UP: .map() incoming Map<String, Object> to MessageDTO. For that purpose use MessageDTO.price()
-	//    NOTE: Incoming Map<String, Object> contains keys PRICE_KEY and CURRENCY_KEY
-	//    NOTE: Use MessageMapper utility class for message validation and transformation
-	// Visible for testing
 	Flux<Map<String, Object>> selectOnlyPriceUpdateEvents(Flux<Map<String, Object>> input) {
-		// TODO: filter only Price messages
-		// TODO: verify that price message are valid
-		// HINT: Use MessageMapper methods to perform filtering and validation
-
 		return input.filter(m -> MessageMapper.isPriceMessageType(m) && MessageMapper.isValidPriceMessage(m));
 	}
 
 	// Visible for testing
 	Flux<MessageDTO<Float>> tranformToPriceMessageDTO(Flux<Map<String, Object>> input) {
-		// TODO map to Statistic message using MessageMapper.mapToPriceMessage
-
 		return input.map(MessageMapper::mapToPriceMessage);
 	}
 
-	// 1.1)   TODO Collect crypto currency price during the interval of seconds
-	//        HINT consider corner case when a client did not send any info about interval (add initial interval (mergeWith(...)))
-	//        HINT use window + switchMap
-	// 1.2)   TODO group collected MessageDTO results by currency
-	//        HINT for reduce consider to reuse Sum.empty and Sum#add
-	// 1.3.2) TODO calculate average for reduced Sum object using Sun#avg
-	// 1.3.3) TODO map to Statistic message using MessageDTO#avg()
-
-	// Visible for testing
-	// TODO: Remove as should be implemented by trainees
 	Flux<MessageDTO<Float>> averagePrice(Flux<Long> requestedInterval,
 			Flux<MessageDTO<Float>> priceData) {
 

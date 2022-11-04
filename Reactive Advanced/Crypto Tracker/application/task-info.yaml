@@ -1,5 +1,5 @@
 type: edu
-custom_name: Application
+custom_name: Application2
 files:
 - name: resources/ui/favicon.ico
   visible: true
@@ -26,16 +26,10 @@ files:
 - name: resources/ui/index.html
   visible: true
 - name: test/CryptoApplicationTests.java
-  visible: false
+  visible: true
 - name: src/ApplicationRunner.java
   visible: true
   placeholders:
-  - offset: 2696
-    length: 10
-    placeholder_text: // TODO Enable stream metrics
-  - offset: 3425
-    length: 236
-    placeholder_text: Flux.never();
   - offset: 3944
     length: 29
     placeholder_text: ; // TODO Enable Backpressure

@@ -18,17 +18,17 @@ files:
   - offset: 1860
     length: 37
     placeholder_text: Flux.never();
-  - offset: 2058
-    length: 1274
+  - offset: 2056
+    length: 420
     placeholder_text: return Mono.never();
-  - offset: 3439
-    length: 533
+  - offset: 2580
+    length: 514
     placeholder_text: Mono.never();
-  - offset: 4084
-    length: 209
+  - offset: 3203
+    length: 190
     placeholder_text: Mono.never();
 - name: test/service/impl/TradeServiceTests.java
-  visible: false
+  visible: true
 - name: src/repository/impl/MongoTradeRepository.java
   visible: true
 - name: src/repository/impl/H2TradeRepository.java
