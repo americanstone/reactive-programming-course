@@ -9,7 +9,7 @@ files:
     placeholder_text: Flux.error(new ToDoException()); // With Operator
   - offset: 599
     length: 540
-    placeholder_text: Flux.error(new ToDoException()); // With Processor
+    placeholder_text: return Flux.error(new ToDoException()); // With Sinks API
 - name: test/HnSTask2Tests.java
   visible: false
 - name: build.gradle
