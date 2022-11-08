@@ -1,6 +1,8 @@
 type: edu
 custom_name: Task 1
 files:
+- name: task.html
+  visible: true
 - name: src/Task.java
   visible: true
   placeholders:
@@ -8,7 +10,7 @@ files:
     length: 49
     placeholder_text: Flux.error(new ToDoException());
 - name: test/BackpressureTask1Tests.java
-  visible: false
+  visible: true
 - name: build.gradle
   visible: false
 - name: src/RefCounted.java

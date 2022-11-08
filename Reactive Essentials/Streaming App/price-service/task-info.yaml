@@ -3,6 +3,8 @@ custom_name: Price Service
 files:
 - name: build.gradle
   visible: false
+- name: test/service/impl/PriceServiceTests.java
+  visible: false
 - name: src/service/impl/DefaultPriceService.java
   visible: true
   placeholders:
@@ -17,5 +19,3 @@ files:
     length: 711
     placeholder_text: "/* TODO: calcualte average price.  Use window(Duration) + groupBy\
       \ */\n\n\tFlux.never();\n}"
-- name: test/service/impl/PriceServiceTests.java
-  visible: false

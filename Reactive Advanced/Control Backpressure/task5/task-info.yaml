@@ -1,6 +1,8 @@
 type: edu
 custom_name: Task 5
 files:
+- name: task.html
+  visible: true
 - name: src/Task.java
   visible: true
   placeholders:
@@ -8,6 +10,6 @@ files:
     length: 491
     placeholder_text: new BaseSubscriber<String>() {};
 - name: test/BackpressureTask5Tests.java
-  visible: false
+  visible: true
 - name: build.gradle
   visible: false

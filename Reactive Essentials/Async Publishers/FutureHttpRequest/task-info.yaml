@@ -3,8 +3,6 @@ custom_name: Task 3
 files:
 - name: build.gradle
   visible: false
-- name: task.ru.md
-  visible: true
 - name: src/AsyncRestTemplate.java
   visible: true
 - name: test/AsyncHttpGetRequestTaskTests.java

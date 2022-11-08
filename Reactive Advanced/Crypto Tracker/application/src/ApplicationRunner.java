@@ -38,7 +38,6 @@ public class ApplicationRunner {
 		EmbeddedMongo.run();
 		Loggers.useSl4jLoggers();
 		MetricsConfig.init();
-		// TODO: Integrate Metrics reporting for all the services using Flux#metrics
 
 		CryptoService cryptoCompareService = new CryptoCompareService();
 		TradeRepository h2Repository = new H2TradeRepository(createInMemH2());
@@ -79,8 +78,6 @@ public class ApplicationRunner {
 
 	// Visible for testing
 	public static Flux<Long> handleRequestedAveragePriceIntervalValue(Flux<String> requestedInterval) {
-		// TODO: input may be incorrect, pass only correct interval
-		// TODO: ignore invalid values (empty, non number, <= 0, > 60)
 		return requestedInterval
 				.handle((s, sink) -> {
 					try {

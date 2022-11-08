@@ -10,7 +10,7 @@ files:
 - name: build.gradle
   visible: false
 - name: test/service/external/CryptoServiceTests.java
-  visible: false
+  visible: true
 - name: src/service/external/CryptoCompareService.java
   visible: true
   placeholders:

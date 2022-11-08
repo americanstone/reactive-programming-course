@@ -3,8 +3,6 @@ custom_name: Task 1
 files:
 - name: build.gradle
   visible: false
-- name: task.ru.md
-  visible: false
 - name: test/CommonPublishersTask1Tests.java
   visible: true
 - name: src/CreateSequenceTask.java

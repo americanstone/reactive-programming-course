@@ -1,5 +1,5 @@
 type: edu
-custom_name: Application2
+custom_name: Application
 files:
 - name: resources/ui/favicon.ico
   visible: true
@@ -30,6 +30,6 @@ files:
 - name: src/ApplicationRunner.java
   visible: true
   placeholders:
-  - offset: 3944
-    length: 29
-    placeholder_text: ; // TODO Enable Backpressure
+  - offset: 3704
+    length: 43
+    placeholder_text: outgoingStream;

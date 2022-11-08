@@ -6,4 +6,4 @@ files:
 - name: src/service/impl/DefaultPriceService.java
   visible: true
 - name: test/service/impl/PriceServiceTests.java
-  visible: false
+  visible: true
