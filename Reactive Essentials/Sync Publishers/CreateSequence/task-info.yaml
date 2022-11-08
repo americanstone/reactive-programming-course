@@ -13,8 +13,5 @@ files:
     placeholder_text: Iterable<Integer>
   - offset: 173
     length: 25
-    placeholder_text: "List<Integer> sequence = new ArrayList<>();\n\
-                   \t\tfor (int i = 0; i < 20; i++) {\n\
-                      \t\t\tsequence.add(i);\n\
-                   \t\t}\n\
-                   \t\treturn sequence;"
+    placeholder_text: "List<Integer> sequence = new ArrayList<>();\n\t\tfor (int i\
+      \ = 0; i < 20; i++) {\n\t\t\tsequence.add(i);\n\t\t}\n\t\treturn sequence;"

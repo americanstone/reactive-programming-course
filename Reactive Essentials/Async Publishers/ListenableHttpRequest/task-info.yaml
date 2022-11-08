@@ -10,11 +10,12 @@ files:
 - name: src/ListenableHttpGetRequestTask.java
   visible: true
   placeholders:
-  - offset: 243
-    length: 339
-    placeholder_text: asyncHttpClient.getForObject("https://baconipsum.com/api/?type=meat-and-filler", String.class);
   - offset: 208
     length: 12
     placeholder_text: ListenableFuture<String>
+  - offset: 243
+    length: 339
+    placeholder_text: "asyncHttpClient.getForObject(\"https://baconipsum.com/api/?type=meat-and-filler\"\
+      , String.class);"
 - name: test/ListenableHttpGetRequestTaskTests.java
   visible: true

@@ -15,5 +15,5 @@ files:
     placeholder_text: CompletableFuture<String>
   - offset: 221
     length: 114
-    placeholder_text: asyncRestTemplate.getForObject("https://baconipsum.com/api/?type=meat-and-filler",
-      String.class);
+    placeholder_text: "asyncRestTemplate.getForObject(\"https://baconipsum.com/api/?type=meat-and-filler\"\
+      , String.class);"
