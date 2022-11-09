@@ -1,11 +1,11 @@
 type: edu
-custom_name: Task 2
+custom_name: "Task 2: Generate UUID"
 files:
 - name: test/CommonPublishersTask2Tests.java
   visible: true
+- name: task.md
+  visible: true
 - name: build.gradle
-  visible: false
-- name: task.ru.md
   visible: false
 - name: src/UUIDGenerator.java
   visible: true

@@ -1,11 +1,11 @@
 type: edu
-custom_name: Task 3
+custom_name: "Task 3: Properties Source"
 files:
 - name: test/CommonPublishersTask3Tests.java
   visible: true
 - name: build.gradle
   visible: false
-- name: task.ru.md
+- name: task.md
   visible: true
 - name: src/Properties.java
   visible: true

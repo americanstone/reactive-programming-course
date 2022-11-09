@@ -1,9 +1,12 @@
 import reactor.core.publisher.Flux;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class Task {
 
 	public static Flux<Character> createSequence(Flux<String> stringFlux) {
-		return stringFlux.concatMap(word -> Flux.fromArray(word.split("")))
+		return stringFlux.concatMapIterable(word -> Arrays.asList(word.split("")))
 		                 .map(letter -> letter.charAt(0));
 	}
 }

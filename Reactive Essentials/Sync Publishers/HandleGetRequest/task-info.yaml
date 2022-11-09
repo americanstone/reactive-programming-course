@@ -3,7 +3,7 @@ custom_name: Task 7
 files:
 - name: build.gradle
   visible: false
-- name: task.ru.md
+- name: task.md
   visible: false
 - name: src/RequestEntity.java
   visible: true

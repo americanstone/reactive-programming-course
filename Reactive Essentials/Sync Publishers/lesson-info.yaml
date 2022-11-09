@@ -1,4 +1,4 @@
-custom_name: 'How To: Generate a sync Publisher'
+custom_name: 'Part 1: Generate a Sync Publisher'
 content:
 - CreateSequence
 - GenerateUUID

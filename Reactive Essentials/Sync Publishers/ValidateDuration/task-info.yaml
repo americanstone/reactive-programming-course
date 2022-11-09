@@ -1,12 +1,12 @@
 type: edu
-custom_name: Task 6
+custom_name: "Task 6: Validate Duration"
 files:
 - name: test/CommonPublishersTask6Tests.java
   visible: true
 - name: build.gradle
   visible: false
-- name: task.ru.md
-  visible: false
+- name: task.md
+  visible: true
 - name: src/ValidationTask.java
   visible: true
   placeholders:

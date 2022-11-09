@@ -1,8 +1,10 @@
 type: edu
-custom_name: Task 1
+custom_name: "Task 1: Create Sequence"
 files:
 - name: build.gradle
   visible: false
+- name: task.md
+  visible: true
 - name: test/CommonPublishersTask1Tests.java
   visible: true
 - name: src/CreateSequenceTask.java

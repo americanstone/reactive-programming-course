@@ -1,10 +1,10 @@
 type: edu
-custom_name: Task 4
+custom_name: "Task 4: Create Temp File"
 files:
 - name: build.gradle
   visible: false
-- name: task.ru.md
-  visible: false
+- name: task.md
+  visible: true
 - name: test/CommonPublishersTask5Tests.java
   visible: true
 - name: src/CreateTempFileTask.java
