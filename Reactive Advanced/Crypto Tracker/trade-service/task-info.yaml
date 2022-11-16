@@ -18,13 +18,13 @@ files:
   - offset: 1750
     length: 37
     placeholder_text: Flux.never();
-  - offset: 1946
-    length: 402
-    placeholder_text: return Mono.never();
-  - offset: 2452
+  - offset: 1955
+    length: 392
+    placeholder_text: Mono.never()
+  - offset: 2451
     length: 514
     placeholder_text: Mono.never();
-  - offset: 3075
+  - offset: 3074
     length: 190
     placeholder_text: Mono.never();
 - name: test/service/impl/TradeServiceTests.java

@@ -61,7 +61,6 @@ public class DefaultTradeService implements TradeService {
 			Flux<Trade> input,
 			TradeRepository tradeRepository1,
 			TradeRepository tradeRepository2) {
-
 		return input
 			.windowTimeout(Integer.MAX_VALUE, Duration.ofSeconds(1), true)
 			.concatMap(tradesFlux -> tradesFlux.collectList().log("batch").flatMap(trades -> {
