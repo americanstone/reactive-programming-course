@@ -12,19 +12,19 @@ files:
 - name: src/service/impl/DefaultTradeService.java
   visible: true
   placeholders:
-  - offset: 1566
+  - offset: 1456
     length: 129
     placeholder_text: Flux.never();
-  - offset: 1860
+  - offset: 1750
     length: 37
     placeholder_text: Flux.never();
-  - offset: 2056
-    length: 420
+  - offset: 1946
+    length: 402
     placeholder_text: return Mono.never();
-  - offset: 2580
+  - offset: 2452
     length: 514
     placeholder_text: Mono.never();
-  - offset: 3203
+  - offset: 3075
     length: 190
     placeholder_text: Mono.never();
 - name: test/service/impl/TradeServiceTests.java

@@ -14,10 +14,10 @@ files:
 - name: src/service/external/CryptoCompareService.java
   visible: true
   placeholders:
-  - offset: 1327
+  - offset: 1184
     length: 136
     placeholder_text: Flux.never();
-  - offset: 1627
+  - offset: 1484
     length: 40
     placeholder_text: Flux.never();
 - name: src/service/external/CryptoCompareClient.java

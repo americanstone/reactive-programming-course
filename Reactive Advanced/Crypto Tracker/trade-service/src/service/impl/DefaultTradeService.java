@@ -12,14 +12,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.publisher.Sinks;
 import reactor.util.retry.Retry;
 import repository.TradeRepository;
 import service.CryptoService;
 import service.TradeService;
 import service.utils.MessageMapper;
 
-import static reactor.core.publisher.Sinks.EmitFailureHandler.FAIL_FAST;
 
 public class DefaultTradeService implements TradeService {
 
@@ -66,7 +64,6 @@ public class DefaultTradeService implements TradeService {
 
 		return input
 			.windowTimeout(Integer.MAX_VALUE, Duration.ofSeconds(1), true)
-			.log("window")
 			.concatMap(tradesFlux -> tradesFlux.collectList().log("batch").flatMap(trades -> {
 				if (trades.isEmpty()) {
 					return Mono.empty();

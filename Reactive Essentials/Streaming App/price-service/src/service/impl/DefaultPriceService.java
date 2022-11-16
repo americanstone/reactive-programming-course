@@ -45,8 +45,10 @@ public class DefaultPriceService implements PriceService {
 		return input.map(MessageMapper::mapToPriceMessage);
 	}
 
-	Flux<MessageDTO<Float>> averagePrice(Flux<Long> requestedInterval,
-			Flux<MessageDTO<Float>> priceData) {
+	Flux<MessageDTO<Float>> averagePrice(
+			Flux<Long> requestedInterval,
+			Flux<MessageDTO<Float>> priceData
+	) {
 
 		return requestedInterval
 				.startWith(DEFAULT_AVG_PRICE_INTERVAL)

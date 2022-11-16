@@ -18,26 +18,32 @@ files:
   placeholders:
   - offset: 625
     length: 28
-    placeholder_text: '/* TODO: convert the following listener API into Flux via Flux.create */'
+    placeholder_text: "/* TODO: convert the following listener API into Flux via Flux.create\
+      \ */"
   - offset: 922
     length: 38
-    placeholder_text: "/* TODO: deliver this error to subscriber using given FluxSink */ \n\t\t\t throw new RuntimeException();"
+    placeholder_text: "/* TODO: deliver this error to subscriber using given FluxSink\
+      \ */ \n\t\t\t throw new RuntimeException();"
   - offset: 2006
     length: 25
-    placeholder_text: '/* TODO deliver unpacked message to subscriber using given FluxSink */'
+    placeholder_text: /* TODO deliver unpacked message to subscriber using given FluxSink
+      */
   - offset: 2124
     length: 14
-    placeholder_text: '/* TODO: deliver error to subscriber using given FluxSink */'
+    placeholder_text: "/* TODO: deliver error to subscriber using given FluxSink */"
   - offset: 2398
     length: 31
-    placeholder_text: '{ /* TODO deliver error to subscriber using given FluxSink */ }'
+    placeholder_text: "{ /* TODO deliver error to subscriber using given FluxSink\
+      \ */ }"
   - offset: 2488
     length: 15
-    placeholder_text: '{ /* TODO: deliver complete to subscriber using given FluxSink */ }'
+    placeholder_text: "{ /* TODO: deliver complete to subscriber using given FluxSink\
+      \ */ }"
   - offset: 2519
     length: 32
-    placeholder_text: '/* TODO: ensure that subscriber cancellation closes socket */'
+    placeholder_text: "/* TODO: ensure that subscriber cancellation closes socket\
+      \ */"
   - offset: 2590
     length: 36
-    placeholder_text: "return Flux.error(() -> {\n\t\t\tsocket.close();\n\t\t\treturn new\
-      \ RuntimeException();\n});"
+    placeholder_text: "return Flux.error(() -> {\n\t\t\tsocket.close();\n\t\t\treturn\
+      \ new RuntimeException();\n});"

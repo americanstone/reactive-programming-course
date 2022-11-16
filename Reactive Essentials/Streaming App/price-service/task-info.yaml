@@ -15,7 +15,7 @@ files:
     length: 51
     placeholder_text: "/* TODO: add mapping to price message. Use MessageMpper */\
       \ \nreturn Flux.never();"
-  - offset: 1681
+  - offset: 1687
     length: 711
     placeholder_text: "/* TODO: calcualte average price.  Use window(Duration) + groupBy\
       \ */\n\n\tFlux.never();\n}"
